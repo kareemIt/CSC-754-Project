@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSC Survey Paper — Master Notes</title>
+    <style>
+      :root {
+        --bg: #f4f7fb;
+        --panel: #ffffff;
+        --panel-alt: #eef3ff;
+        --text: #1b2430;
+        --muted: #536274;
+        --accent: #2f6fed;
+        --accent-soft: #eaf1ff;
+        --border: #dfe7f5;
+        --success: #1f8f5f;
+        --warning: #b97a00;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 0 20px 60px;
+      }
+
+      .page {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        box-shadow: 0 10px 30px rgba(28, 43, 69, 0.06);
+        overflow: hidden;
+      }
+
+      header {
+        background: linear-gradient(135deg, #183767, #2f6fed);
+        color: white;
+        padding: 34px 36px;
+      }
+
+      h1, h2, h3, h4 {
+        margin: 0 0 12px;
+        line-height: 1.25;
+      }
+
+      h1 {
+        font-size: 2.1rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin-top: 26px;
+        color: #143565;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+        color: #213d66;
+      }
+
+      .content {
+        padding: 30px 36px 40px;
+      }
+
+      p {
+        margin: 10px 0;
+      }
+
+      .status {
+        display: inline-block;
+        background: var(--accent-soft);
+        color: var(--accent);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 6px 10px;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      ul, ol {
+        margin: 12px 0 16px 24px;
+        padding: 0;
+      }
+
+      li {
+        margin: 8px 0;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .card {
+        background: var(--panel-alt);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 18px 20px;
+        margin-top: 18px;
+      }
+
+      .deadline-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 14px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .deadline-table th,
+      .deadline-table td {
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--border);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .deadline-table th {
+        background: #eef3ff;
+      }
+
+      .deadline-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      strong {
+        color: var(--text);
+      }
+
+      .section-highlight {
+        background: #f9fbff;
+        border-left: 4px solid var(--accent);
+        padding: 12px 16px;
+        margin: 18px 0;
+      }
+
+      .tag {
+        display: inline-block;
+        background: #e9f7f0;
+        color: var(--success);
+        padding: 4px 8px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        margin-right: 8px;
+      }
+
+      @media (max-width: 700px) {
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+
+        .content, header {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="page">
+        <header>
+          <h1>CSC Survey Paper — Master Notes</h1>
+          <div class="status">Smart City Modeling &amp; Simulation Survey</div>
+        </header>
+
+        <div class="content">
+          <section>
+            <h2>1. Assignment</h2>
+            <p>
+              The project is a <strong>survey paper</strong>. The goal is to choose a topic,
+              search recent academic literature, catalog the publications, closely read the most
+              relevant papers, classify them, and ultimately write a state-of-the-art survey.
+              The professor recommends using <strong>ACM Computing Surveys</strong> as the stylistic model.
+            </p>
+
+            <p>The final survey should typically contain:</p>
+            <ul>
+              <li><strong>4 foundational papers</strong></li>
+              <li><strong>8 recent and relevant journal papers</strong></li>
+              <li><strong>8 recent and relevant conference papers / technical reports</strong></li>
+            </ul>
+
+          </section>
+
+          <section>
+            <h2>2. Our Topic</h2>
+            <div class="section-highlight">
+              <h3>Modeling and Simulation for Smart Cities: Methods, Applications, and Emerging Technologies</h3>
+            </div>
+
+            <h3>Central research question</h3>
+            <p>
+              <strong>How are modeling and simulation techniques used to understand, design, optimize, and manage smart cities?</strong>
+            </p>
+
+            <p>
+              Rather than making the survey exclusively about digital twins, we're treating digital twins as one
+              important component of the broader smart-city modeling and simulation field.
+            </p>
+          </section>
+
+          <section>
+            <h2>3. Half-Page Topic Description</h2>
+            <div class="card">
+              <h3>Modeling and Simulation for Smart Cities: Methods, Applications, and Emerging Technologies</h3>
+                <p>write something here
+                    </p>
+            </div>
+          </section>
+
+          <section>
+            <h2>4. Planned Classification Scheme</h2>
+            <p>This is currently our working classification for organizing the literature.</p>
+            <ol>
+              <li><strong>I. Foundations &amp; Urban Modeling Architectures</strong><br />General smart-city modeling frameworks, urban digital twins, integrated modeling platforms, definitions and architectures.</li>
+              <li><strong>II. Modeling &amp; Simulation Methods</strong><br />Agent-based modeling, system dynamics, numerical/physics-based simulation, discrete-event simulation, microsimulation, cellular models, data-driven simulation.</li>
+              <li><strong>III. Transportation &amp; Urban Mobility</strong><br />Traffic flow, autonomous vehicles, multimodal transportation, routing, congestion, evacuation, and mobility digital twins.</li>
+              <li><strong>IV. Energy &amp; Buildings</strong><br />Urban energy consumption, smart grids, building energy simulation, microclimates, regional energy systems, and energy digital twins.</li>
+              <li><strong>V. Environment &amp; Urban Resilience</strong><br />Flooding, stormwater, climate change, waste management, disaster response, and infrastructure resilience.</li>
+              <li><strong>VI. AI &amp; Data-Driven Simulation</strong><br />Machine learning, generative AI, IoT/sensor integration, real-time models, and intelligent digital twins.</li>
+              <li><strong>VII. Challenges &amp; Future Research</strong><br />Interoperability, model accuracy, scalability, data quality, privacy, standardization, real-time integration, validation, and future research.</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2>5. Literature Review – Core Smart-City Digital Twin and Simulation Papers</h2>
+
+            <h3>A. Surveys, foundations &amp; general urban digital twins</h3>
+            <ol>
+              <li><strong>Smart City Based on Digital Twins</strong> — Li, Deren; Yu, Wenbo; Shao, Zhenfeng (2021), <em>Computational Urban Science</em>. Excellent overview of how digital twins relate to smart-city systems and applications.</li>
+              <li><strong>A Systematic Review of a Digital Twin City: A New Pattern of Urban Governance Toward Smart Cities</strong> (2021), <em>Journal of Management Science and Engineering</em>. Covers simulation, IoT, AI, blockchain, and digital-twin city frameworks.</li>
+              <li><strong>A Digital Twin Smart City for Citizen Feedback</strong> — White et al. (2021), <em>Cities</em>. Particularly useful because the model includes <strong>flood and crowd simulations</strong>.</li>
+              <li><strong>Urban Digital Twin Applications as a Virtual Platform of Smart City</strong> — Yang &amp; Kim (2021). Analyzes and classifies 40 urban digital-twin applications.</li>
+              <li><strong>The Adoption of Urban Digital Twins</strong> — Ferré-Bigorra, Casals &amp; Gangolells (2022), <em>Cities</em>. Maps existing UDT implementations and their structures, applications, inputs and outputs.</li>
+              <li><strong>Challenges of Urban Digital Twins: A Systematic Review and a Delphi Expert Survey</strong> — Lei et al. (2023), <em>Automation in Construction</em>. Identifies major technical and implementation challenges.</li>
+              <li><strong>Digital Twin-Supported Smart City: Status, Challenges and Future Research Directions</strong> — Wang et al. (2023), <em>Expert Systems with Applications</em>. Reviews <strong>202 smart-city digital-twin papers</strong>.</li>
+              <li><strong>Urban Digital Twin Challenges: A Systematic Review and Perspectives for Sustainable Smart Cities</strong> (2023), <em>Sustainable Cities and Society</em>. Particularly valuable because modeling, simulation and decision support are one of its main challenge categories.</li>
+              <li><strong>Digital Twin in Smart City</strong> (2023), <em>Transportation Research Procedia</em>. Explicitly discusses modeling and simulation as part of smart-city digital twins.</li>
+              <li><strong>Digital Twins in City Planning</strong> — Michael Batty (2024), <em>Nature Computational Science</em>. This is one I strongly want in our main 20–25; it connects aggregate models, agent-based models, cellular models and microsimulation to digital city twins.</li>
+              <li><strong>Comprehensive Analysis of Digital Twins in Smart Cities: A 4200-Paper Bibliometric Study</strong> (2024), <em>Artificial Intelligence Review</em>. Analyzes more than 4,200 publications, which will also be extremely useful for finding additional literature.</li>
+              <li><strong>A Review of Urban Digital Twins Integration, Challenges, and Future Directions in Smart City Development</strong> — Mazzetto (2024), <em>Sustainability</em>.</li>
+              <li><strong>Navigating Urban Complexity: The Transformative Role of Digital Twins in Smart City Development</strong> (2024), <em>Sustainable Cities and Society</em>. Systematic review based on 64 selected studies.</li>
+              <li><strong>The Digital Landscape of Smart Cities and Digital Twins: A Systematic Literature Review of Digital Terrain and 3D City Models in Enhancing Decision-Making</strong> (2024). Includes physical/environmental simulation and 3D city models.</li>
+              <li><strong>A Comprehensive Review of Digital Twin Technologies in Smart Cities</strong> (2025), <em>Digital Engineering</em>. Covers transportation, energy, emergency response, environmental monitoring and other smart-city domains.</li>
+              <li><strong>Global Perspectives on Digital Twin Smart Cities: Innovations, Challenges, and Pathways to a Sustainable Urban Future</strong> (2025), <em>Sustainable Cities and Society</em>. Strong recent state-of-the-art survey.</li>
+              <li><strong>IoT, AI, and Digital Twins in Smart Cities: A Systematic Review for a Thematic Mapping and Research Agenda</strong> (2025), <em>Smart Cities</em>. Reviews 64 studies.</li>
+              <li><strong>Towards Connected Simulations – Tracing the Evolutionary Path of Urban Simulations across Digital Twin Projects and Use Cases</strong> (2025), <em>Procedia Computer Science</em>. This is extremely on-topic because it explicitly deals with integrating <strong>urban simulations</strong> into urban digital twins.</li>
+            </ol>
+
+            <h3>B. Transportation &amp; urban mobility simulation</h3>
+            <ol>
+              <li><strong>Agent-Based Modeling of a Stadium Evacuation in a Smart City</strong> — Zhang et al. (2018), <em>Winter Simulation Conference</em>. Uses agent-based simulation to study smart-city evacuation behavior.</li>
+              <li><strong>A Systematic Review of Agent-Based Models for Autonomous Vehicles in Urban Mobility and Logistics: Possibilities for Integrated Simulation Models</strong> (2021). Excellent bridge between agent-based simulation and future smart-city transportation.</li>
+              <li><strong>Digital Twins for Urban Mobility</strong> — Bachechi (2022). Covers Traffic &amp; Air Quality and multimodal mobility digital twins built from simulation models.</li>
+              <li><strong>Urban Digital Twins: Decision-Making Models for Transportation Network Simulation</strong> — Zhang &amp; Zhang (2022), ACM conference paper. Directly compares digital-twin approaches with conventional transportation simulation.</li>
+              <li><strong>Traffic Flow Digital Twin Generation for Highway Scenario Based on Radar-Camera Paired Fusion</strong> — Li &amp; Zhang (2023), <em>Scientific Reports</em>. Builds a data-driven traffic digital twin.</li>
+              <li><strong>DTUMOS, Digital Twin for Large-Scale Urban Mobility Operating System</strong> — Yeon et al. (2023), <em>Scientific Reports</em>. Another one I strongly favor: validated using <strong>Seoul, New York City and Chicago</strong>, with more than 20,000 simulated vehicles.</li>
+              <li><strong>Generative AI-Driven Digital Twin Architecture for Urban Mobility Simulation and Decision Support</strong> (2026), <em>Smart Cities</em>. Very current work combining GenAI with mobility simulations.</li>
+            </ol>
+
+            <h3>C. Energy, buildings &amp; urban climate simulation</h3>
+            <ol>
+              <li><strong>Sustainable and Resource Efficient Cities Platform – SureCity Holistic Simulation and Optimization for Smart Cities</strong> (2019), <em>Journal of Cleaner Production</em>. Develops a holistic simulation/optimization platform for urban energy strategy.</li>
+              <li><strong>Smart City Digital Twin–Enabled Energy Management: Toward Real-Time Urban Building Energy Benchmarking</strong> — Francisco, Mohammadi &amp; Taylor (2020), <em>Journal of Management in Engineering</em>.</li>
+              <li><strong>On the Design of an Urban Data and Modeling Platform and Its Application to Urban District Analyses</strong> — Eicker et al. (2020), <em>Energy and Buildings</em>. Important smart-city modeling platform paper.</li>
+              <li><strong>Information Modelling for Urban Building Energy Simulation — A Taxonomic Review</strong> — Malhotra et al. (2022), <em>Building and Environment</em>.</li>
+              <li><strong>Urban Energy Simulations Using Open CityGML Models: A Comparative Analysis</strong> — Malhotra et al. (2022), <em>Energy and Buildings</em>. Simulates 500 3D buildings using CityGML/Modelica.</li>
+              <li><strong>Urban Building Energy and Microclimate Modeling — From 3D City Generation to Dynamic Simulations</strong> (2022), <em>Energy</em>. Integrates microclimate and building energy simulation.</li>
+              <li><strong>Development and Application of Digital Twin Technology for Integrated Regional Energy Systems in Smart Cities</strong> (2022), <em>Sustainable Computing: Informatics and Systems</em>.</li>
+              <li><strong>The Spatial Data Infrastructure of an Urban Digital Twin in the Building Energy Domain Using OGC Standards</strong> (2022), ISPRS. Uses measured and simulated urban-building energy data.</li>
+              <li><strong>How Close Are Urban Scale Building Simulations to Measured Data? Examining Bias Derived from Building Metadata in Urban Building Energy Modeling</strong> (2022), <em>Applied Energy</em>. Includes simulations covering more than <strong>50,000 buildings</strong>.</li>
+              <li><strong>Building Energy Simulation and Its Application for Building Performance Optimization: A Review of Methods, Tools, and Case Studies</strong> (2023), <em>Advances in Applied Energy</em>. Explicitly covers urban-scale simulation and digital twins.</li>
+              <li><strong>Empowering Smart Cities with Digital Twins of Buildings: Applications and Implementation Considerations of Data-Driven Energy Modelling in Building Management</strong> (2024). Compares simulation-based and data-driven building models.</li>
+            </ol>
+
+            <h3>D. Environment, water, floods &amp; resilience</h3>
+            <ol>
+              <li><strong>Using a Digital Twin to Explore Water Infrastructure Impacts During the COVID-19 Pandemic</strong> (2021), <em>Sustainable Cities and Society</em>. Uses digital-twin modeling for urban water infrastructure.</li>
+              <li><strong>Designing a Spatially-Explicit Urban Digital Twin Framework for Smart Water Infrastructure and Flood Management</strong> — Sabri et al. (2023), IEEE conference. Uses geosimulation, GIS, GeoAI and spatial modeling.</li>
+              <li><strong>Application of Artificial Intelligence in Digital Twin Models for Stormwater Infrastructure Systems in Smart Cities</strong> (2024), <em>Advanced Engineering Informatics</em>.</li>
+              <li><strong>Climate Change Scenario Simulations for Urban Flood Resilience with System Dynamics Approach: A Case Study of Smart City Shanghai</strong> (2024), <em>International Journal of Disaster Risk Reduction</em>. Very good example of scenario-based simulation.</li>
+              <li><strong>The Synergistic Interplay of Artificial Intelligence and Digital Twin in Environmentally Planning Sustainable Smart Cities: A Comprehensive Systematic Review</strong> (2024), <em>Environmental Science and Ecotechnology</em>.</li>
+              <li><strong>Searching for New Urban Metabolism Techniques: A Review Towards Future Development for a City-Scale Urban Metabolism Digital Twin</strong> (2024), <em>Sustainable Cities and Society</em>.</li>
+              <li><strong>Urban Digital Twin-Based Solution Using Geospatial Information for Solid Waste Management</strong> (2024), <em>Sustainable Cities and Society</em>. Includes waste-generation simulation and optimized collection routing.</li>
+              <li><strong>City-Scale Digital Twin Framework for Flood Impact Analysis: Integrating Urban Infrastructure and Real-Time Data Analytics</strong> (2025), <em>Urban Climate</em>. Simulates flood effects on transportation and infrastructure.</li>
+              <li><strong>FlowsDT: A Geospatial Digital Twin for Navigating Urban Flood Dynamics</strong> (2026), <em>Computers, Environment and Urban Systems</em>. Uses coupled hydrodynamic simulation and an interactive urban digital twin.</li>
+              <li><strong>A Numerical Modelling-Supported Digital Twin for Urban Floods Monitoring in Typhoon or Storm Scenario</strong> (2026), <em>Environmental Modelling &amp; Software</em>. Combines numerical flood simulation with 3D visualization.</li>
+            </ol>
+
+            <h3>E. System dynamics, AI &amp; integrated smart-city modeling</h3>
+            <ol>
+              <li><strong>“Cities Go Smart!”: A System Dynamics-Based Approach to Smart City Conceptualization</strong> — Nunes et al. (2021), <em>Journal of Cleaner Production</em>. Uses system dynamics to model causal relationships among smart-city determinants.</li>
+              <li><strong>Research on System Dynamics Model and Computer Simulation of Smart City System</strong> — Cheng &amp; Li (2022). Explicit smart-city system dynamics simulation.</li>
+              <li><strong>System Dynamics Modeling of Collaborative Governance in Smart Cities: A Case Study of Dongguan, China</strong> — Liu et al. (2024), <em>Scientific Reports</em>. Creates a dynamic model of interacting smart-city subsystems.</li>
+              <li><strong>Leveraging Generative AI for Urban Digital Twins: A Scoping Review on the Autonomous Generation of Urban Data, Scenarios, Designs, and 3D City Models for Smart City Advancement</strong> — Xu et al. (2024), <em>Urban Informatics</em>. Very useful recent AI paper covering transportation, energy, water and infrastructure modeling.</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2>11. Main Argument Beginning to Emerge</h2>
+            <p>
+              We haven't finalized a thesis yet, but the literature is pointing toward a useful story:
+            </p>
+            <div class="section-highlight">
+              <p><strong>Smart-city simulation is evolving from relatively isolated and static urban models toward integrated, data-driven, continuously updated systems.</strong></p>
+            </div>
+            <p>The progression we may eventually discuss is approximately:</p>
+            <p><strong>Traditional simulation → integrated urban modeling → sensor/IoT-connected models → digital twins → AI-enhanced and increasingly real-time simulation.</strong></p>
+            <p>
+              At the same time, older simulation methods aren't simply disappearing. <strong>Agent-based modeling</strong>,
+              <strong>system dynamics</strong>, <strong>numerical simulation</strong>, <strong>microsimulation</strong>, etc.
+              increasingly operate <em>inside</em> larger digital-twin/smart-city platforms.
+            </p>
+            <p>This distinction could become one of the central ideas of our final survey.</p>
+          </section>
+
+          <section>
+            <h2>12. Questions We'll Compare Across Papers</h2>
+            <ul>
+              <li><strong>Research problem</strong> — What problem is being solved?</li>
+              <li><strong>Application/domain</strong> — Transportation, energy, flooding, planning, etc.</li>
+              <li><strong>Modeling technique</strong> — Agent-based, system dynamics, numerical, ML/data-driven, etc.</li>
+              <li><strong>Simulation purpose</strong> — Prediction, optimization, scenario testing, decision support, monitoring, etc.</li>
+              <li><strong>Data</strong> — Historical, synthetic, IoT sensors, GIS, cameras, building data, etc.</li>
+              <li><strong>Scale</strong> — Building, neighborhood, transportation network, or entire city.</li>
+              <li><strong>Real-time capability</strong> — Static/offline vs continuously updated.</li>
+              <li><strong>Validation</strong> — How do the authors establish that their model works?</li>
+              <li><strong>Main results</strong> — What did they actually discover?</li>
+              <li><strong>Strengths</strong> — Why is the approach useful?</li>
+              <li><strong>Limitations</strong> — What doesn't it solve?</li>
+              <li><strong>Future work</strong> — What do the authors say needs to happen next?</li>
+            </ul>
+            <p>These will become our <strong>literature matrix</strong>.</p>
+          </section>
+
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

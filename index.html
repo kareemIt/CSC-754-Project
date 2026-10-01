@@ -1,1128 +1,789 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSC 754: Digital Twin Systems for Smart City Simulation - Literature Survey</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSC Survey Paper — Master Notes</title>
     <style>
-        :root {
-            --primary-color: #1e3a8a;
-            --secondary-color: #3b82f6;
-            --accent-color: #0284c7;
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-color: #1e293b;
-            --text-muted: #64748b;
-            --border-color: #e2e8f0;
-            --code-bg: #f1f5f9;
-            --eli5-bg: #f0fdf4;
-            --eli5-border: #22c55e;
-            --highlight-bg: #eff6ff;
-            --highlight-border: #3b82f6;
-        }
+      :root {
+        --bg: #f4f7fb;
+        --panel: #ffffff;
+        --panel-alt: #eef3ff;
+        --text: #1b2430;
+        --muted: #536274;
+        --accent: #2f6fed;
+        --accent-soft: #eaf1ff;
+        --border: #dfe7f5;
+        --success: #1f8f5f;
+        --warning: #b97a00;
+      }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 0;
-        }
+      * { box-sizing: border-box; }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSC 754 Survey: Urban Digital Twins for Smart City Simulation</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="[https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css](https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css)" rel="stylesheet">
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
-    <!-- Google Fonts -->
-    <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Fira+Code:wght@400;600&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Fira+Code:wght@400;600&display=swap)" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #0f172a;
-            --accent-color: #2563eb;
-            --accent-light: #eff6ff;
-            --secondary-color: #475569;
-            --card-bg: #ffffff;
-            --border-color: #e2e8f0;
-            --eli5-bg: #fffbe3;
-            --eli5-border: #f59e0b;
-        }
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            line-height: 1.6;
-        }
+      .container {
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 0 20px 60px;
+      }
 
-        .hero-section {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: #ffffff;
-            padding: 4rem 0 3rem 0;
-            border-bottom: 4px solid var(--accent-color);
-        }
+      .page {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        box-shadow: 0 10px 30px rgba(28, 43, 69, 0.06);
+        overflow: hidden;
+      }
 
-        .hero-title {
-            font-weight: 800;
-            letter-spacing: -0.02em;
-        }
+      header {
+        background: linear-gradient(135deg, #183767, #2f6fed);
+        color: white;
+        padding: 34px 36px;
+      }
 
-        .badge-csc {
-            background-color: rgba(37, 99, 235, 0.2);
-            color: #60a5fa;
-            border: 1px solid rgba(96, 165, 250, 0.3);
-            font-size: 0.9rem;
-            padding: 0.4rem 0.8rem;
-        }
+      h1, h2, h3, h4 {
+        margin: 0 0 12px;
+        line-height: 1.25;
+      }
 
-        .sticky-nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid #334155;
-        }
+      h1 {
+        font-size: 2.1rem;
+      }
 
-        .nav-link {
-            color: #cbd5e1 !important;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: all 0.2s;
-        }
+      h2 {
+        font-size: 1.5rem;
+        margin-top: 30px;
+        color: #143565;
+      }
 
-        .nav-link:hover, .nav-link.active {
-            color: #60a5fa !important;
-        }
+      h3 {
+        font-size: 1.15rem;
+        color: #213d66;
+        margin-top: 18px;
+      }
 
-        .section-header {
-            border-left: 5px solid var(--accent-color);
-            padding-left: 1rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
+      .content {
+        padding: 30px 36px 40px;
+      }
 
-        .card {
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
+      p {
+        margin: 10px 0;
+      }
 
-        .paper-card {
-            margin-bottom: 2rem;
-            border-left: 4px solid var(--accent-color);
-        }
+      .status {
+        display: inline-block;
+        background: var(--accent-soft);
+        color: var(--accent);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 6px 12px;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
 
-        .paper-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
+      .muted {
+        color: var(--muted);
+      }
 
-        /* ELI5 Section Styling */
-        .eli5-box {
-            background-color: var(--eli5-bg);
-            border: 2px dashed var(--eli5-border);
-            border-radius: 10px;
-            padding: 1.25rem;
-            margin: 1rem 0;
-            position: relative;
-        }
+      ul, ol {
+        margin: 12px 0 16px 24px;
+        padding: 0;
+      }
 
-        .eli5-badge {
-            background-color: #f59e0b;
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            padding: 0.25rem 0.6rem;
-            border-radius: 4px;
-            display: inline-block;
-            margin-bottom: 0.5rem;
-        }
+      li {
+        margin: 8px 0;
+      }
 
-        /* Flowchart / Visual Diagram Box */
-        .visual-diagram {
-            background: #f1f5f9;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 1rem 0;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.85rem;
-        }
+      .card {
+        background: var(--panel-alt);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 18px 20px;
+        margin-top: 18px;
+      }
 
-        .flow-step {
-            display: inline-block;
-            background: #ffffff;
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            border: 1px solid #94a3b8;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-            margin: 0.2rem;
-        }
+      .section-highlight {
+        background: #f9fbff;
+        border-left: 4px solid var(--accent);
+        padding: 12px 16px;
+        margin: 18px 0;
+      }
 
-        .flow-arrow {
-            color: #2563eb;
-            font-weight: bold;
-            margin: 0 0.3rem;
-        }
+      /* Paper Entry Styles */
+      .paper-entry {
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 20px;
+        margin: 16px 0 24px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      }
 
-        .timeline-badge {
-            background-color: #e2e8f0;
-            color: #334155;
-            font-weight: 600;
-            font-size: 0.8rem;
-        }
+      .paper-entry h4 {
+        color: #143565;
+        font-size: 1.1rem;
+        margin-top: 0;
+        margin-bottom: 12px;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 10px;
+      }
 
-        .table-custom th {
-            background-color: #1e293b;
-            color: #ffffff;
-        }
+      .eli5-box {
+        background: #fffcf5;
+        border-left: 4px solid var(--warning);
+        padding: 12px 16px;
+        margin: 12px 0 16px;
+        font-size: 0.9rem;
+        color: #4a3b1c;
+        border-radius: 0 8px 8px 0;
+      }
 
-        footer {
-            background: var(--primary-color);
-            color: #94a3b8;
-            padding: 3rem 0;
-            margin-top: 5rem;
-            border-top: 1px solid #334155;
+      .flow-diagram {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        background: var(--panel-alt);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 12px 16px;
+        margin: 12px 0 16px;
+        font-size: 0.85rem;
+      }
+
+      .flow-step {
+        background: #ffffff;
+        border: 1px solid var(--border);
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-weight: 600;
+        color: #143565;
+      }
+
+      .flow-arrow {
+        color: var(--accent);
+        font-weight: bold;
+      }
+
+      @media (max-width: 700px) {
+        .content, header {
+          padding-left: 20px;
+          padding-right: 20px;
         }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="container">
+      <div class="page">
+        <header>
+          <h1>CSC Survey Paper — Master Notes</h1>
+          <div class="status">Smart City Modeling &amp; Simulation Survey</div>
+        </header>
 
-    <!-- Hero Header -->
-    <header class="hero-section">
-        <div class="container">
-            <div class="d-flex align-items-center gap-2 mb-2">
-                <span class="badge badge-csc rounded-pill"><i class="fa-solid fa-graduation-cap me-1"></i> CSC 754: Topics in System Simulation</span>
-                <span class="badge bg-secondary rounded-pill"><i class="fa-solid fa-university me-1"></i> CUNY College of Staten Island</span>
-            </div>
-            <h1 class="hero-title display-5 text-white mb-3">Urban Digital Twins: Data Assimilation, Multiscale Modeling, and AI Integration for Smart City Simulation</h1>
-            <p class="lead text-light mb-4" style="max-width: 850px;">
-                A comprehensive survey examining state-of-the-art research in Urban Digital Twins (UDTs), capturing foundational frameworks, recent journal breakthroughs, conference innovations, and real-world multi-domain deployments.
+        <div class="content">
+          <section>
+            <h2>1. Assignment</h2>
+            <p>
+              The project is a <strong>survey paper</strong>. The goal is to choose a topic,
+              search recent academic literature, catalog the publications, closely read the most
+              relevant papers, classify them, and ultimately write a state-of-the-art survey.
+              The professor recommends using <strong>ACM Computing Surveys</strong> as the stylistic model.
             </p>
-            <div class="row g-3 text-light small">
-                <div class="col-md-3"><i class="fa-solid fa-user-tie text-info me-2"></i><strong>Instructor:</strong> Prof. Feng Gu</div>
-                <div class="col-md-3"><i class="fa-solid fa-users text-info me-2"></i><strong>Survey Team:</strong> CSC 754 Research Group</div>
-                <div class="col-md-3"><i class="fa-solid fa-calendar text-info me-2"></i><strong>Term:</strong> Fall 2026</div>
-                <div class="col-md-3"><i class="fa-solid fa-book-bookmark text-info me-2"></i><strong>Total Literature:</strong> 50+ Papers Cataloged</div>
+
+            <p>The final survey should typically contain:</p>
+            <ul>
+              <li><strong>4 foundational papers</strong></li>
+              <li><strong>8 recent and relevant journal papers</strong></li>
+              <li><strong>8 recent and relevant conference papers / technical reports</strong></li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>2. Our Topic</h2>
+            <div class="section-highlight">
+              <h3>Modeling and Simulation for Smart Cities: Methods, Applications, and Emerging Technologies</h3>
             </div>
-        </div>
-    </header>
 
-    <!-- Sticky Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-nav">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-info" href="#"><i class="fa-solid fa-city me-2"></i>UDT Survey</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#overview">1. Overview & Syllabus</a></li>
-                    <li class="nav-link"><a class="nav-link" href="#description">2. Topic Description</a></li>
-                    <li class="nav-link"><a class="nav-link" href="#classification">3. Classification Scheme</a></li>
-                    <li class="nav-link"><a class="nav-link" href="#selected-papers">4. 25 Main Papers & ELI5 Summaries</a></li>
-                    <li class="nav-link"><a class="nav-link" href="#slides">5. Presentation Outline</a></li>
-                    <li class="nav-link"><a class="nav-link" href="#final-paper">6. Final Paper Structure</a></li>
-                </ul>
+            <h3>Central research question</h3>
+            <p>
+              <strong>How are modeling and simulation techniques used to understand, design, optimize, and manage smart cities?</strong>
+            </p>
+            <p>
+              Rather than making the survey exclusively about digital twins, we're treating digital twins as one
+              important component of the broader smart-city modeling and simulation field.
+            </p>
+          </section>
+
+          <section>
+            <h2>3. Half-Page Topic Description</h2>
+            <div class="card">
+              <h3>Modeling and Simulation for Smart Cities: Methods, Applications, and Emerging Technologies</h3>
+              <p>
+                As cities continue to grow and face more and more complex infrastructural, energy, transportation, and environmental challenges.
+                So, with the use of smart city simulation, we will be able to understand, design, optimize, and help manage these cities better without the
+                need to test these solutions in the real world.
+                <br /><br />
+                In this survey, we will be looking at major modeling/simulation methods used in smart city research. This may include
+                agent-based modeling, discrete-event, system dynamics, and data-driven simulation. It will also look into transportation and traffic management
+                alongside energy and smart grids, as well as new and emerging technologies such as digital twins and AI-driven solutions.
+                <br /><br />
+                The goal of this survey is primarily to classify and compare different approaches to the solutions that current cities are facing and weigh the pros and cons
+                of each approach as we try to determine which set of approaches would be most effective at solving these issues.
+              </p>
             </div>
-        </div>
-    </nav>
+          </section>
 
-    <div class="container my-5">
+          <section>
+            <h2>4. Planned Classification Scheme</h2>
+            <p>This is currently our working classification for organizing the literature.</p>
+            <ol>
+              <li><strong>I. Foundations &amp; Urban Modeling Architectures</strong><br />General smart-city modeling frameworks, urban digital twins, integrated modeling platforms, definitions and architectures.</li>
+              <li><strong>II. Modeling &amp; Simulation Methods</strong><br />Agent-based modeling, system dynamics, numerical/physics-based simulation, discrete-event simulation, microsimulation, cellular models, data-driven simulation.</li>
+              <li><strong>III. Transportation &amp; Urban Mobility</strong><br />Traffic flow, autonomous vehicles, multimodal transportation, routing, congestion, evacuation, and mobility digital twins.</li>
+              <li><strong>IV. Energy &amp; Buildings</strong><br />Urban energy consumption, smart grids, building energy simulation, microclimates, regional energy systems, and energy digital twins.</li>
+              <li><strong>V. Environment &amp; Urban Resilience</strong><br />Flooding, stormwater, climate change, waste management, disaster response, and infrastructure resilience.</li>
+              <li><strong>VI. AI &amp; Data-Driven Simulation</strong><br />Machine learning, generative AI, IoT/sensor integration, real-time models, and intelligent digital twins.</li>
+              <li><strong>VII. Challenges &amp; Future Research</strong><br />Interoperability, model accuracy, scalability, data quality, privacy, standardization, real-time integration, validation, and future research.</li>
+            </ol>
+          </section>
 
-        <!-- SECTION 1: COURSE OVERVIEW & DUE DATES -->
-        <section id="overview" class="mb-5">
-            <h2 class="section-header text-primary"><i class="fa-solid fa-list-check me-2"></i>1. Course Deliverables & Survey Timeline</h2>
-            <p>This web page presents the ongoing milestones and complete survey results for CSC 754 (Topics in System Simulation) at CUNY College of Staten Island under Prof. Feng Gu. The project follows the ACM Computing Surveys paper style.</p>
+          <section>
+            <h2>5. 50 Articles | Literature Review – Core Smart-City Digital Twin and Simulation Papers</h2>
+
+            <h3>A. Surveys, foundations &amp; general urban digital twins</h3>
+            <ol>
+              <li><a href="https://scholar.google.com/scholar?q=Smart+City+Based+on+Digital+Twins+Deren+Li" target="_blank"><strong>Smart City Based on Digital Twins</strong></a> — Li, Deren; Yu, Wenbo; Shao, Zhenfeng (2021), <em>Computational Urban Science</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=A+Systematic+Review+of+a+Digital+Twin+City+A+New+Pattern+of+Urban+Governance+Toward+Smart+Cities" target="_blank"><strong>A Systematic Review of a Digital Twin City: A New Pattern of Urban Governance Toward Smart Cities</strong></a> (2021), <em>Journal of Management Science and Engineering</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=A+Digital+Twin+Smart+City+for+Citizen+Feedback+White" target="_blank"><strong>A Digital Twin Smart City for Citizen Feedback</strong></a> — White et al. (2021), <em>Cities</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Urban+Digital+Twin+Applications+as+a+Virtual+Platform+of+Smart+City+Yang" target="_blank"><strong>Urban Digital Twin Applications as a Virtual Platform of Smart City</strong></a> — Yang &amp; Kim (2021).</li>
+              <li><a href="https://scholar.google.com/scholar?q=The+Adoption+of+Urban+Digital+Twins+Ferre" target="_blank"><strong>The Adoption of Urban Digital Twins</strong></a> — Ferré-Bigorra, Casals &amp; Gangolells (2022), <em>Cities</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Challenges+of+Urban+Digital+Twins+A+Systematic+Review+and+a+Delphi+Expert+Survey" target="_blank"><strong>Challenges of Urban Digital Twins: A Systematic Review and a Delphi Expert Survey</strong></a> — Lei et al. (2023), <em>Automation in Construction</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Digital+Twin-Supported+Smart+City+Status+Challenges+and+Future+Research+Directions" target="_blank"><strong>Digital Twin-Supported Smart City: Status, Challenges and Future Research Directions</strong></a> — Wang et al. (2023), <em>Expert Systems with Applications</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Urban+Digital+Twin+Challenges+A+Systematic+Review+and+Perspectives+for+Sustainable+Smart+Cities" target="_blank"><strong>Urban Digital Twin Challenges: A Systematic Review and Perspectives for Sustainable Smart Cities</strong></a> (2023), <em>Sustainable Cities and Society</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Digital+Twin+in+Smart+City" target="_blank"><strong>Digital Twin in Smart City</strong></a> (2023), <em>Transportation Research Procedia</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Digital+Twins+in+City+Planning+Michael+Batty" target="_blank"><strong>Digital Twins in City Planning</strong></a> — Michael Batty (2024), <em>Nature Computational Science</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Comprehensive+Analysis+of+Digital+Twins+in+Smart+Cities+A+4200-Paper+Bibliometric+Study" target="_blank"><strong>Comprehensive Analysis of Digital Twins in Smart Cities: A 4200-Paper Bibliometric Study</strong></a> (2024), <em>Artificial Intelligence Review</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=A+Review+of+Urban+Digital+Twins+Integration+Challenges+and+Future+Directions+in+Smart+City+Development" target="_blank"><strong>A Review of Urban Digital Twins Integration, Challenges, and Future Directions in Smart City Development</strong></a> — Mazzetto (2024), <em>Sustainability</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Navigating+Urban+Complexity+The+Transformative+Role+of+Digital+Twins+in+Smart+City+Development" target="_blank"><strong>Navigating Urban Complexity: The Transformative Role of Digital Twins in Smart City Development</strong></a> (2024), <em>Sustainable Cities and Society</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=The+Digital+Landscape+of+Smart+Cities+and+Digital+Twins" target="_blank"><strong>The Digital Landscape of Smart Cities and Digital Twins: A Systematic Literature Review of Digital Terrain and 3D City Models in Enhancing Decision-Making</strong></a> (2024).</li>
+              <li><a href="https://scholar.google.com/scholar?q=A+Comprehensive+Review+of+Digital+Twin+Technologies+in+Smart+Cities" target="_blank"><strong>A Comprehensive Review of Digital Twin Technologies in Smart Cities</strong></a> (2025), <em>Digital Engineering</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Global+Perspectives+on+Digital+Twin+Smart+Cities+Innovations+Challenges" target="_blank"><strong>Global Perspectives on Digital Twin Smart Cities: Innovations, Challenges, and Pathways to a Sustainable Urban Future</strong></a> (2025), <em>Sustainable Cities and Society</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=IoT+AI+and+Digital+Twins+in+Smart+Cities+A+Systematic+Review" target="_blank"><strong>IoT, AI, and Digital Twins in Smart Cities: A Systematic Review for a Thematic Mapping and Research Agenda</strong></a> (2025), <em>Smart Cities</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Towards+Connected+Simulations+Tracing+the+Evolutionary+Path+of+Urban+Simulations" target="_blank"><strong>Towards Connected Simulations – Tracing the Evolutionary Path of Urban Simulations across Digital Twin Projects and Use Cases</strong></a> (2025), <em>Procedia Computer Science</em>.</li>
+            </ol>
+
+            <h3>B. Transportation &amp; urban mobility simulation</h3>
+            <ol>
+              <li><a href="https://scholar.google.com/scholar?q=Agent-Based+Modeling+of+a+Stadium+Evacuation+in+a+Smart+City" target="_blank"><strong>Agent-Based Modeling of a Stadium Evacuation in a Smart City</strong></a> — Zhang et al. (2018), <em>Winter Simulation Conference</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=A+Systematic+Review+of+Agent-Based+Models+for+Autonomous+Vehicles+in+Urban+Mobility+and+Logistics" target="_blank"><strong>A Systematic Review of Agent-Based Models for Autonomous Vehicles in Urban Mobility and Logistics: Possibilities for Integrated Simulation Models</strong></a> (2021).</li>
+              <li><a href="https://scholar.google.com/scholar?q=Digital+Twins+for+Urban+Mobility+Bachechi" target="_blank"><strong>Digital Twins for Urban Mobility</strong></a> — Bachechi (2022).</li>
+              <li><a href="https://scholar.google.com/scholar?q=Urban+Digital+Twins+Decision-Making+Models+for+Transportation+Network+Simulation" target="_blank"><strong>Urban Digital Twins: Decision-Making Models for Transportation Network Simulation</strong></a> — Zhang &amp; Zhang (2022), ACM PADS.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Traffic+Flow+Digital+Twin+Generation+for+Highway+Scenario+Based+on+Radar-Camera+Paired+Fusion" target="_blank"><strong>Traffic Flow Digital Twin Generation for Highway Scenario Based on Radar-Camera Paired Fusion</strong></a> — Li &amp; Zhang (2023), <em>Scientific Reports</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=DTUMOS+Digital+Twin+for+Large-Scale+Urban+Mobility+Operating+System" target="_blank"><strong>DTUMOS, Digital Twin for Large-Scale Urban Mobility Operating System</strong></a> — Yeon et al. (2023), <em>Scientific Reports</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Generative+AI-Driven+Digital+Twin+Architecture+for+Urban+Mobility+Simulation+and+Decision+Support" target="_blank"><strong>Generative AI-Driven Digital Twin Architecture for Urban Mobility Simulation and Decision Support</strong></a> (2026), <em>Smart Cities</em>.</li>
+            </ol>
+
+            <h3>C. Energy, buildings &amp; urban climate simulation</h3>
+            <ol>
+              <li><a href="https://scholar.google.com/scholar?q=Sustainable+and+Resource+Efficient+Cities+Platform+SureCity+Holistic+Simulation" target="_blank"><strong>Sustainable and Resource Efficient Cities Platform – SureCity Holistic Simulation and Optimization for Smart Cities</strong></a> (2019), <em>Journal of Cleaner Production</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Smart+City+Digital+Twin+Enabled+Energy+Management+Toward+Real-Time+Urban+Building+Energy+Benchmarking" target="_blank"><strong>Smart City Digital Twin–Enabled Energy Management: Toward Real-Time Urban Building Energy Benchmarking</strong></a> — Francisco, Mohammadi &amp; Taylor (2020), <em>Journal of Management in Engineering</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=On+the+Design+of+an+Urban+Data+and+Modeling+Platform+and+Its+Application+to+Urban+District+Analyses" target="_blank"><strong>On the Design of an Urban Data and Modeling Platform and Its Application to Urban District Analyses</strong></a> — Eicker et al. (2020), <em>Energy and Buildings</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Information+Modelling+for+Urban+Building+Energy+Simulation+A+Taxonomic+Review" target="_blank"><strong>Information Modelling for Urban Building Energy Simulation — A Taxonomic Review</strong></a> — Malhotra et al. (2022), <em>Building and Environment</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Urban+Energy+Simulations+Using+Open+CityGML+Models" target="_blank"><strong>Urban Energy Simulations Using Open CityGML Models: A Comparative Analysis</strong></a> — Malhotra et al. (2022), <em>Energy and Buildings</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Urban+Building+Energy+and+Microclimate+Modeling+From+3D+City+Generation+to+Dynamic+Simulations" target="_blank"><strong>Urban Building Energy and Microclimate Modeling — From 3D City Generation to Dynamic Simulations</strong></a> (2022), <em>Energy</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Development+and+Application+of+Digital+Twin+Technology+for+Integrated+Regional+Energy+Systems+in+Smart+Cities" target="_blank"><strong>Development and Application of Digital Twin Technology for Integrated Regional Energy Systems in Smart Cities</strong></a> (2022), <em>Sustainable Computing: Informatics and Systems</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=The+Spatial+Data+Infrastructure+of+an+Urban+Digital+Twin+in+the+Building+Energy+Domain" target="_blank"><strong>The Spatial Data Infrastructure of an Urban Digital Twin in the Building Energy Domain Using OGC Standards</strong></a> (2022), ISPRS.</li>
+              <li><a href="https://scholar.google.com/scholar?q=How+Close+Are+Urban+Scale+Building+Simulations+to+Measured+Data" target="_blank"><strong>How Close Are Urban Scale Building Simulations to Measured Data? Examining Bias Derived from Building Metadata in Urban Building Energy Modeling</strong></a> (2022), <em>Applied Energy</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Building+Energy+Simulation+and+Its+Application+for+Building+Performance+Optimization" target="_blank"><strong>Building Energy Simulation and Its Application for Building Performance Optimization: A Review of Methods, Tools, and Case Studies</strong></a> (2023), <em>Advances in Applied Energy</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Empowering+Smart+Cities+with+Digital+Twins+of+Buildings" target="_blank"><strong>Empowering Smart Cities with Digital Twins of Buildings: Applications and Implementation Considerations of Data-Driven Energy Modelling in Building Management</strong></a> (2024).</li>
+            </ol>
+
+            <h3>D. Environment, water, floods &amp; resilience</h3>
+            <ol>
+              <li><a href="https://scholar.google.com/scholar?q=Using+a+Digital+Twin+to+Explore+Water+Infrastructure+Impacts+During+the+COVID-19+Pandemic" target="_blank"><strong>Using a Digital Twin to Explore Water Infrastructure Impacts During the COVID-19 Pandemic</strong></a> (2021), <em>Sustainable Cities and Society</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Designing+a+Spatially-Explicit+Urban+Digital+Twin+Framework+for+Smart+Water+Infrastructure+and+Flood+Management" target="_blank"><strong>Designing a Spatially-Explicit Urban Digital Twin Framework for Smart Water Infrastructure and Flood Management</strong></a> — Sabri et al. (2023), IEEE.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Application+of+Artificial+Intelligence+in+Digital+Twin+Models+for+Stormwater+Infrastructure+Systems+in+Smart+Cities" target="_blank"><strong>Application of Artificial Intelligence in Digital Twin Models for Stormwater Infrastructure Systems in Smart Cities</strong></a> (2024), <em>Advanced Engineering Informatics</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Climate+Change+Scenario+Simulations+for+Urban+Flood+Resilience+with+System+Dynamics+Approach" target="_blank"><strong>Climate Change Scenario Simulations for Urban Flood Resilience with System Dynamics Approach: A Case Study of Smart City Shanghai</strong></a> (2024), <em>International Journal of Disaster Risk Reduction</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=The+Synergistic+Interplay+of+Artificial+Intelligence+and+Digital+Twin+in+Environmentally+Planning+Sustainable+Smart+Cities" target="_blank"><strong>The Synergistic Interplay of Artificial Intelligence and Digital Twin in Environmentally Planning Sustainable Smart Cities: A Comprehensive Systematic Review</strong></a> (2024), <em>Environmental Science and Ecotechnology</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Searching+for+New+Urban+Metabolism+Techniques+A+Review+Towards+Future+Development" target="_blank"><strong>Searching for New Urban Metabolism Techniques: A Review Towards Future Development for a City-Scale Urban Metabolism Digital Twin</strong></a> (2024), <em>Sustainable Cities and Society</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Urban+Digital+Twin-Based+Solution+Using+Geospatial+Information+for+Solid+Waste+Management" target="_blank"><strong>Urban Digital Twin-Based Solution Using Geospatial Information for Solid Waste Management</strong></a> (2024), <em>Sustainable Cities and Society</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=City-Scale+Digital+Twin+Framework+for+Flood+Impact+Analysis" target="_blank"><strong>City-Scale Digital Twin Framework for Flood Impact Analysis: Integrating Urban Infrastructure and Real-Time Data Analytics</strong></a> (2025), <em>Urban Climate</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=FlowsDT+A+Geospatial+Digital+Twin+for+Navigating+Urban+Flood+Dynamics" target="_blank"><strong>FlowsDT: A Geospatial Digital Twin for Navigating Urban Flood Dynamics</strong></a> (2026), <em>Computers, Environment and Urban Systems</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=A+Numerical+Modelling-Supported+Digital+Twin+for+Urban+Floods+Monitoring" target="_blank"><strong>A Numerical Modelling-Supported Digital Twin for Urban Floods Monitoring in Typhoon or Storm Scenario</strong></a> (2026), <em>Environmental Modelling &amp; Software</em>.</li>
+            </ol>
+
+            <h3>E. System dynamics, AI &amp; integrated smart-city modeling</h3>
+            <ol>
+              <li><a href="https://scholar.google.com/scholar?q=Cities+Go+Smart+A+System+Dynamics-Based+Approach+to+Smart+City+Conceptualization" target="_blank"><strong>“Cities Go Smart!”: A System Dynamics-Based Approach to Smart City Conceptualization</strong></a> — Nunes et al. (2021), <em>Journal of Cleaner Production</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Research+on+System+Dynamics+Model+and+Computer+Simulation+of+Smart+City+System" target="_blank"><strong>Research on System Dynamics Model and Computer Simulation of Smart City System</strong></a> — Cheng &amp; Li (2022).</li>
+              <li><a href="https://scholar.google.com/scholar?q=System+Dynamics+Modeling+of+Collaborative+Governance+in+Smart+Cities" target="_blank"><strong>System Dynamics Modeling of Collaborative Governance in Smart Cities: A Case Study of Dongguan, China</strong></a> — Liu et al. (2024), <em>Scientific Reports</em>.</li>
+              <li><a href="https://scholar.google.com/scholar?q=Leveraging+Generative+AI+for+Urban+Digital+Twins" target="_blank"><strong>Leveraging Generative AI for Urban Digital Twins: A Scoping Review on the Autonomous Generation of Urban Data, Scenarios, Designs, and 3D City Models for Smart City Advancement</strong></a> — Xu et al. (2024), <em>Urban Informatics</em>.</li>
+            </ol>
+          </section>
+          
+          <section>
+            <h2>6. Selected 25 Main Papers for Thorough Reading</h2>
             
-            <div class="row g-4 mt-2">
-                <div class="col-md-6">
-                    <div class="card h-100 p-4">
-                        <h5 class="fw-bold text-dark"><i class="fa-solid fa-clock text-accent me-2"></i>Milestone Deadlines</h5>
-                        <ul class="list-group list-group-flush small">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <span><strong>Sept 17:</strong> Form Group & Topic Description</span>
-                                <span class="badge bg-success">Completed</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <span><strong>Oct 1:</strong> Literature Bibliography (50+ links)</span>
-                                <span class="badge bg-success">Completed</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <span><strong>Oct 15:</strong> Annotate Literature & Select 20–25 Core Papers</span>
-                                <span class="badge bg-success">Completed</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <span><strong>Oct 29:</strong> Detailed Summaries, ELI5 Explanations & Classification</span>
-                                <span class="badge bg-primary">Active</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <span><strong>Nov 12 / Nov 19:</strong> In-Class Presentation Slides</span>
-                                <span class="badge timeline-badge">Upcoming</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <span><strong>Dec 10:</strong> Final Survey Paper Submission</span>
-                                <span class="badge timeline-badge">Upcoming</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card h-100 p-4 bg-light">
-                        <h5 class="fw-bold text-dark"><i class="fa-solid fa-scale-balanced text-accent me-2"></i>Course Grading & Requirements</h5>
-                        <p class="small text-muted mb-3">According to the CSC 754 syllabus, assessment is distributed as follows:</p>
-                        <div class="d-flex justify-content-around text-center mb-3">
-                            <div class="p-2 border rounded bg-white" style="width:30%;">
-                                <div class="h4 fw-bold text-primary mb-0">40%</div>
-                                <div class="small text-muted">Midterm Exam (Open Book)</div>
-                            </div>
-                            <div class="p-2 border rounded bg-white" style="width:30%;">
-                                <div class="h4 fw-bold text-success mb-0">30%</div>
-                                <div class="small text-muted">Literature Review</div>
-                            </div>
-                            <div class="p-2 border rounded bg-white" style="width:30%;">
-                                <div class="h4 fw-bold text-info mb-0">30%</div>
-                                <div class="small text-muted">Term Project</div>
-                            </div>
-                        </div>
-                        <p class="small text-muted mb-0"><i class="fa-solid fa-circle-info me-1"></i> The survey requires analyzing <strong>4 foundational papers</strong>, <strong>8 recent journal papers</strong>, and <strong>8 recent conference/tech reports</strong> (plus supplemental core studies).</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 2: TOPIC DESCRIPTION -->
-        <section id="description" class="mb-5">
-            <h2 class="section-header text-primary"><i class="fa-solid fa-file-lines me-2"></i>2. Topic Description</h2>
-            <div class="card p-4">
-                <h4 class="fw-bold text-dark mb-3">Urban Digital Twins: Data Assimilation, Multiscale Modeling, and AI Integration for Smart City Simulation</h4>
-                <p>
-                    As urbanization accelerates worldwide, modern metropolitan areas face critical challenges in transportation congestion, flood risk management, building energy efficiency, and emergency response. <strong>Urban Digital Twins (UDTs)</strong> have emerged as a dominant technological paradigm to address these systemic issues by creating dynamic, living 3D digital replicas of physical urban spaces.
-                </p>
-                <p>
-                    Unlike traditional static Geographic Information Systems (GIS) or Building Information Modeling (BIM) models, a true Urban Digital Twin continuously assimilates real-time streams from Internet-of-Things (IoT) sensors, mobile GPS feeds, and remote sensing satellites. By integrating continuous data assimilation, agent-based multiscale modeling, and artificial intelligence (including Generative AI and Physics-Informed Machine Learning), UDTs enable city managers to run predictive "what-if" simulations.
-                </p>
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> Simple Analogy (ELI5: What is an Urban Digital Twin?)</span>
-                    <p class="mb-0">
-                        Imagine you have a giant <strong>Lego City</strong> on your bedroom floor. Now imagine that every time a toy car moves or a tiny rain doll drops on your real Lego set, a magic video game on your tablet mirrors it instantly! If you want to see what happens if a huge storm comes, you don't pour real water on your floor—you test it on your tablet game first to keep the real town safe. That tablet game is a <strong>Digital Twin</strong>!
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 3: CLASSIFICATION SCHEME -->
-        <section id="classification" class="mb-5">
-            <h2 class="section-header text-primary"><i class="fa-solid fa-diagram-project me-2"></i>3. Literature Classification Scheme</h2>
-            <p>To systematically synthesize the 50+ surveyed publications, we categorize research according to two primary axes: <strong>Technological Layer Architecture</strong> and <strong>Urban Application Domain</strong>.</p>
+            <h3>1. Foundational Papers (4)</h3>
             
-            <div class="row g-4 mt-1">
-                <div class="col-md-6">
-                    <div class="card h-100 p-4 border-primary">
-                        <h5 class="fw-bold text-primary"><i class="fa-solid fa-layer-group me-2"></i>Axis A: Technological Layer Architecture</h5>
-                        <ul class="list-unstyled mt-3">
-                            <li class="mb-2"><span class="badge bg-primary me-2">Layer 1</span> <strong>Data Acquisition & Spatial Infrastructure:</strong> GIS, BIM, OGC API standards, IoT sensors, Point Clouds.</li>
-                            <li class="mb-2"><span class="badge bg-primary me-2">Layer 2</span> <strong>Data Assimilation & State Synchronization:</strong> Kalman Filters, Particle Filters, MQTT streams, Software-in-the-Loop.</li>
-                            <li class="mb-2"><span class="badge bg-primary me-2">Layer 3</span> <strong>Simulation Engine & Multiscale Modeling:</strong> Agent-Based Modeling (ABM), System Dynamics (SD), Hydrodynamic 2D/3D solvers.</li>
-                            <li class="mb-0"><span class="badge bg-primary me-2">Layer 4</span> <strong>AI & Decision Support Layer:</strong> Generative AI, Physics-Informed Neural Networks (PINNs), Hysteresis traffic optimization.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card h-100 p-4 border-success">
-                        <h5 class="fw-bold text-success"><i class="fa-solid fa-city me-2"></i>Axis B: Urban Application Domains</h5>
-                        <ul class="list-unstyled mt-3">
-                            <li class="mb-2"><span class="badge bg-success me-2">Domain 1</span> <strong>Urban Mobility & Traffic Systems:</strong> Highway radar-camera fusion, EV charging, evacuation modeling.</li>
-                            <li class="mb-2"><span class="badge bg-success me-2">Domain 2</span> <strong>Hydrology, Flooding & Infrastructure:</strong> Stormwater capacity, typhoon modeling, smart water grids.</li>
-                            <li class="mb-2"><span class="badge bg-success me-2">Domain 3</span> <strong>Building Energy & Microclimate:</strong> 3D CityGML, space heating demand, urban heat stress.</li>
-                            <li class="mb-0"><span class="badge bg-success me-2">Domain 4</span> <strong>Governance, Citizen Engagement & Waste:</strong> Participatory planning, solid waste IoT, system dynamics governance.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 4: SELECTED 25 MAIN PAPERS & IN-DEPTH ELI5 SUMMARIES -->
-        <section id="selected-papers" class="mb-5">
-            <h2 class="section-header text-primary"><i class="fa-solid fa-book-open me-2"></i>4. Selected 25 Main Papers with Detailed ELI5 Summaries</h2>
-            <p>Below are detailed, in-depth summaries for the 25 core publications required by the survey syllabus (4 Foundational, 8 Journal, 8 Conference/Tech Reports, and 5 Core Supplemental papers). Each paper includes a simple <strong>ELI5 analogy</strong>, a <strong>visual workflow diagram</strong>, and a thorough technical synthesis.</p>
-
-            <!-- ================= FOUNDATIONAL PAPERS (1-4) ================= -->
-            <h3 class="text-secondary border-bottom pb-2 mb-4"><i class="fa-solid fa-landmark me-2"></i>Category I: Foundational Papers (4 Studies)</h3>
-
             <!-- Paper 1 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">1. Smart City Based on Digital Twins</h5>
-                    <span class="badge bg-dark">Foundational #1</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Deren Li, Shaojun Yao, Zhenfeng Shao | <strong>Venue:</strong> Computational Urban Science (2021)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>The Magic Mirror Blueprint:</strong> Imagine building a replica of your school out of glowing glass. When someone opens a door in the real school, the glass door opens automatically! This paper gives the master plan for making the entire city out of "magic glass" so city leaders can see everywhere at once.</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-satellite"></i> Real City Sensors</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-network-wired"></i> 5G & IoT Network</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-cubes"></i> 3D Spatiotemporal Mirror</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-brain"></i> Intelligent City Decisions</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> This foundational paper outlines the theoretical framework for Digital Twin Cities (DTC). The authors define DTC as a multi-dimensional cyber-physical system integrating Remote Sensing (RS), Geographic Information Systems (GIS), Building Information Modeling (BIM), and IoT. The paper establishes the 5-layer architecture (Perception, Network, Data Platform, Simulation Engine, Application Services) and demonstrates how continuous spatiotemporal data streams eliminate urban information silos.
-                </p>
+            <div class="paper-entry">
+              <h4>1. Smart City Based on Digital Twins (Li, Deren et al., 2021)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> Imagine building a replica of your town out of glass blocks. Whenever a bus drives or rain falls in the real town, the glass replica shows it instantly so the mayor can spot problems from one big screen room.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">Real City Sensors &amp; IoT</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">5G &amp; Cloud Network</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">3D Spatiotemporal Twin</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">City Brain Operations</span>
+              </div>
+              <p><strong>Summary:</strong> This paper explores how digital twins can serve as the foundation for smart city development by creating a two-way connection between the physical city and the virtual city. It primarily focuses on smart city planning, management, and governance rather than on simulation specifically. The resources discussed include IoT, sensors, big data, cloud computing, AI, 5G, GIS, and simulation. The authors outline five major applications: the smart city operation brain, traffic management, public safety, public services, and epidemic management. A limitation is that it relies on conceptual frameworks and application reviews without experimental datasets. It argues that future smart cities need stronger spatial information infrastructure, better urban data integration, and comprehensive city operation centers to realize digital twin-based management fully.</p>
             </div>
 
             <!-- Paper 2 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">2. Digital Twins in City Planning</h5>
-                    <span class="badge bg-dark">Foundational #2</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Michael Batty | <strong>Venue:</strong> Environment and Planning B: Urban Analytics and City Science (2024)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>SimCity for Real City Planners:</strong> Think of this paper as explaining why making a video game city is much harder when real people live inside it! The author shows that unlike factory machines, cities are alive, changing every minute, so our computer models must constantly learn and update.</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-city"></i> Physical City Systems</span>
-                    <span class="flow-arrow">&harr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-arrows-rotate"></i> Real-Time Data Loop</span>
-                    <span class="flow-arrow">&harr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-sliders"></i> What-If Policy Simulations</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> Michael Batty provides a critical theoretical foundation tracing the evolution from static 2D/3D land-use urban models to dynamic Digital Twins. The paper emphasizes the fundamental difference between mechanical engineering twins (closed systems) and urban twins (open socio-technical systems). Batty formulates the requirement for high-frequency data feedback loops and cautions against over-promising complete predictability in non-linear urban ecosystems.
-                </p>
+            <div class="paper-entry">
+              <h4>2. Digital Twins in City Planning (Michael Batty, 2024)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> A video game city is easy because the computer controls everything. A real city has millions of unpredictable humans. This paper shows how to link old-school urban math models into new digital twins while keeping human planners in charge.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">Urban Theory Models</span>
+                <span class="flow-arrow">&harr;</span>
+                <span class="flow-step">Streaming Sensor Data</span>
+                <span class="flow-arrow">&harr;</span>
+                <span class="flow-step">Human Planners in the Loop</span>
+              </div>
+              <p><strong>Summary:</strong> This perspective review details how digital twins can support city planning. It evaluates urban modeling approaches—including aggregate economic and behavioral models, agent-based models, cellular models, and microsimulations—and discusses how they can efficiently connect to digital twins. Geared toward urban planning and decision support, the approach ranges from local neighborhoods to entire systems of cities. Batty emphasizes keeping people, policymakers, and scientists in the loop rather than allowing digital twins to make decisions independently. The main contribution is demonstrating how existing urban models can form the foundations of city digital twins while highlighting critical challenges like data integration, computational requirements, and the difficulty of representing complex human behavior.</p>
             </div>
 
             <!-- Paper 3 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">3. A Systematic Review of a Digital Twin City: A New Pattern of Urban Governance Toward Smart Cities</h5>
-                    <span class="badge bg-dark">Foundational #3</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Comprehensive Survey Team | <strong>Venue:</strong> Journal of Urban Management (2021)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>The Super-Cook Cookbook:</strong> Imagine reading every single recipe book written about baking cakes and making one giant master list of ingredients. This paper reads hundreds of digital twin studies and tells us the top ingredients every smart city needs!</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-magnifying-glass"></i> Literature Review</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-filter"></i> Taxonomy & Clustering</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-sitemap"></i> Governance Pattern Identification</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> This paper provides a systematic literature review (SLR) analyzing the emerging concept of Digital Twin Cities as governance instruments. The authors categorize key enabling technologies (5G networks, cloud computing, AI, spatial sensors) and evaluate deployment governance models across traffic optimization, environmental monitoring, and disaster response.
-                </p>
+            <div class="paper-entry">
+              <h4>3. A Systematic Review of a Digital Twin City: A New Pattern of Urban Governance Toward Smart Cities (2021)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> This is a master recipe book. It studies hundreds of digital twin ideas and groups them together to show how city halls can stop guessing and use live data maps to run public services.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">Literature Ingestion</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Tech Taxonomy (5G/AI/BIM)</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Governance Pattern Matrix</span>
+              </div>
+              <p><strong>Summary:</strong> This paper investigates how digital twin cities transform urban governance and support smart city development. The authors cover essential concepts, technologies, and applications of digital twin cities, including IoT, 5G, blockchain, collaborative computing, simulations, and artificial intelligence. The objective is to improve how cities monitor conditions, analyze information, simulate scenarios, and make decisions. As a systematic review, it lacks a specific dataset or traditional simulation validation, rendering it conceptual rather than an operational case study. The paper concludes that future work must prioritize data integration, real-time interaction, interoperability, security, and the development of comprehensive digital twin city governance platforms.</p>
             </div>
 
             <!-- Paper 4 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">4. Digital Twin-Supported Smart City: Status, Challenges and Future Research Directions</h5>
-                    <span class="badge bg-dark">Foundational #4</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Wang et al. | <strong>Venue:</strong> Computer Communications / IEEE Survey (2023)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>The Smart City Map with Red Flags:</strong> This is like taking a walk around a brand-new playground and putting green sticky notes on things that work great (like big slides) and red sticky notes where things are tricky (like slippery steps). It shows where digital twins excel and where we still need to fix bugs.</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-layer-group"></i> 4-Tier Architecture</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-triangle-exclamation"></i> Security & Interoperability Barriers</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-compass"></i> Roadmap 2030</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> Wang et al. present a comprehensive survey of the technological state-of-the-art in smart city digital twins. The paper establishes a 4-tier structural model (Sensing Layer, Data Layer, Model Layer, Service Layer) and explicitly highlights open research challenges, including data privacy, cross-domain semantic interoperability, high computational latency, and lack of standardized APIs.
-                </p>
+            <div class="paper-entry">
+              <h4>4. Digital Twin-Supported Smart City: Status, Challenges and Future Research Directions (Wang et al., 2023)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> Think of this as a report card reviewing 202 digital twin projects. It highlights what works great (like 3D visuals) and warns where systems still struggle (like data privacy and combining different software programs).
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">202 Surveyed Papers</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">4-Tier System Stack</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Open Research Barriers</span>
+              </div>
+              <p><strong>Summary:</strong> This systematic literature review evaluates how digital twins support smart cities. By reviewing 202 papers, the authors analyze the application of technologies such as IoT, machine learning, cloud computing, data management, and 3D visualization across different municipal domains. The paper aims to map the current state of the field, identify challenges, and guide future research. The researchers argue that to transition from disparate technologies to integrated city management systems, future smart city digital twins require vastly improved real-time data integration, interoperability, modeling accuracy, security, and decision-support mechanisms.</p>
             </div>
 
-            <!-- ================= RECENT JOURNAL PAPERS (5-12) ================= -->
-            <h3 class="text-secondary border-bottom pb-2 mb-4 mt-5"><i class="fa-solid fa-newspaper me-2"></i>Category II: Recent Journal Papers (8 Studies)</h3>
+            <h3>2. Recent Journal Papers (8)</h3>
 
             <!-- Paper 5 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">5. DTUMOS: Digital Twin for Large-Scale Urban Mobility Operating System</h5>
-                    <span class="badge bg-primary">Journal #1</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Yeon et al. | <strong>Venue:</strong> IEEE Transactions on Intelligent Transportation Systems (2023)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>The Super Traffic Brain:</strong> Imagine if every yellow taxi, subway train, and bus in a huge city was connected to a giant video game brain that turns traffic lights green right before traffic jams happen!</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-car"></i> Fleet GPS & Signals</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-microchip"></i> DTUMOS Middleware</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-traffic-light"></i> Real-Time Signal Control</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> DTUMOS proposes a distributed digital twin operating platform specifically designed for city-scale transportation management. Using microservices and stream processing, DTUMOS ingests real-time GPS feeds from thousands of vehicles to update agent-based traffic simulation models continuously, enabling dynamic signal optimization and reducing urban congestion by up to 18%.
-                </p>
+            <div class="paper-entry">
+              <h4>5. DTUMOS, Digital Twin for Large-Scale Urban Mobility Operating System (Yeon et al., 2023)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> A super-fast video game traffic engine that moves over 20,000 virtual cars across huge cities like Seoul, NYC, and Chicago simultaneously to test new bus routes and traffic lights.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">Citywide GPS &amp; Smart Cards</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">AI Travel-Time Estimator</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Fleet Routing &amp; Signal Dispatch</span>
+              </div>
+              <p><strong>Summary:</strong> This paper introduces DTUMOS, a digital twin for large-scale urban mobility systems designed to simulate and test transportation services across entire metropolitan areas. The application combines digital twin simulation, AI-based travel time estimates, and vehicle routing algorithms. The model uses real-world mobility data—such as taxi trajectories and smart card transit records from Seoul, New York City, and Chicago—simulating over 20,000 vehicles and up to 200,000 passenger requests. Results prove DTUMOS handles large-scale mobility simulations significantly faster than baseline systems while maintaining accuracy via AI approximations. Key strengths include scalability, speed, and open-source availability, though it requires extensive, high-quality GPS transit data for proper calibration.</p>
             </div>
 
             <!-- Paper 6 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">6. FlowsDT: A Geospatial Digital Twin for Navigating Urban Flood Dynamics</h5>
-                    <span class="badge bg-primary">Journal #2</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Hydro-GIS Group | <strong>Venue:</strong> Water Resources Research / ISPRS Journal (2026)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>The Rain Water Tracker:</strong> When heavy rain pours onto city streets, this smart twin predicts exactly which puddles will turn into dangerous rivers 30 minutes before it happens, telling rescue boats where to go!</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-cloud-showers-heavy"></i> Live Rain Radar</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-water"></i> 2D Shallow Water Solver</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-map-location-dot"></i> 3D Flood Map Alert</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> FlowsDT integrates high-resolution 3D elevation data (LiDAR DEMs) with real-time weather radar and stream-gauge telemetry. By coupling hydraulic 2D shallow water physics solvers with GPU acceleration, FlowsDT delivers sub-minute inundation forecasting, giving emergency responders accurate spatial depth maps during extreme rain events.
-                </p>
+            <div class="paper-entry">
+              <h4>6. FlowsDT: A Geospatial Digital Twin for Navigating Urban Flood Dynamics (2026)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> A water-tracking twin for Galveston, Texas, that watches rainfall and shows exactly which street corners and backyards will get flooded hours before the storm arrives.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">Live Radar &amp; LiDAR DEM</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Coupled 1D/2D PCSWMM</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Street Flood Depth Maps</span>
+              </div>
+              <p><strong>Summary:</strong> This paper develops a high-resolution geospatial digital twin to monitor and predict urban flooding patterns in Galveston, Texas. It couples 1D pipe network hydraulic modeling with 2D overland hydrodynamic modeling using PCSWMM. The platform assimilates LiDAR elevation models, land cover data, storm sewer infrastructure, historical rainfall, and crowd-sourced social-sensing data to calculate water depth, extent, duration, and velocity across 100-year storm scenarios. A limitation is the reliance on incomplete drainage pipe drawings and the fact that continuous, real-time IoT water-level sensor telemetry is currently proposed/partially simulated rather than fully deployed citywide.</p>
             </div>
 
             <!-- Paper 7 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">7. A Numerical Modelling-Supported Digital Twin for Urban Floods Monitoring in Typhoon Scenario</h5>
-                    <span class="badge bg-primary">Journal #3</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Coastal Flood Risk Lab | <strong>Venue:</strong> Journal of Environmental Management (2026)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>The Typhoon Shield:</strong> Imagine a giant computer shield that tests how high ocean waves and rain will splash during a big storm, showing mayor's offices which sea walls need reinforcement!</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-hurricane"></i> Typhoon Surge Data</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-calculator"></i> Hydrodynamic Model</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-shield-halved"></i> Barrier & Pump Activation</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> This research presents an end-to-end digital twin system tailored for coastal cities experiencing severe typhoons. The system couples numerical storm surge hydrodynamic equations with urban underground drainage pipe simulations. Real-time water level sensors adjust boundary conditions dynamically, improving inundation prediction accuracy by 24% over un-calibrated models.
-                </p>
+            <div class="paper-entry">
+              <h4>7. A Numerical Modelling-Supported Digital Twin for Urban Floods Monitoring in Typhoon or Storm Scenario (2026)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> When a major hurricane or typhoon hits a coast, this twin pairs heavy ocean wave physics equations with a 3D web dashboard so city workers can watch storm surge water rising in real time.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">Typhoon Rain &amp; Surge Data</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Physics-Based Hydro Solver</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">3D Interactive Web Map</span>
+              </div>
+              <p><strong>Summary:</strong> The researchers explore monitoring and predicting urban flooding during typhoons and major coastal storms by linking a numerical flood simulation with an interactive digital twin. It integrates physics-based shallow water equations, GIS data layers, database management, and 3D web visualization. Users can test hypothetical rainfall scenarios or stream real-time storm data to generate high-resolution inundation forecasts. The study demonstrated that the virtual model makes complex hydrodynamic predictions easily understandable for emergency staff, though running full numerical equations requires substantial, low-latency computing power.</p>
             </div>
 
             <!-- Paper 8 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">8. Traffic Flow Digital Twin Generation for Highway Scenario Based on Radar-Camera Paired Fusion</h5>
-                    <span class="badge bg-primary">Journal #4</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Li & Zhang | <strong>Venue:</strong> IEEE Transactions on Intelligent Transportation Systems (2023)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>The Hawk-Eye Radar:</strong> Cameras can get blinded by fog or rain, but radar can see through dark storms. By gluing camera eyes and radar eyes together on highway poles, the computer makes a 3D video game of highway traffic that never loses track of cars!</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-camera"></i> Camera + <i class="fa-solid fa-tower-cell"></i> Radar</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-object-group"></i> Sensor Fusion Engine</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-car-side"></i> 3D Vehicle Trajectories</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> The paper introduces a sensor-fusion pipeline combining roadside millimeter-wave radar and optical cameras to construct high-fidelity highway digital twins. The fused spatio-temporal tracking algorithm achieves 98.2% vehicle trajectory reconstruction accuracy even under adverse weather and lighting conditions.
-                </p>
+            <div class="paper-entry">
+              <h4>8. Traffic Flow Digital Twin Generation for Highway Scenario Based on Radar-Camera Paired Fusion (Li &amp; Zhang, 2023)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> Cameras struggle in thick fog or rain, but radar can see through anything. Putting both on highway poles gives the computer a perfect 3D picture of highway traffic that never loses a car.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">Radar Points + Video Streams</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Kalman Filtering &amp; Fusion</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Continuous 3D Vehicle Trajectories</span>
+              </div>
+              <p><strong>Summary:</strong> This research presents a framework for building a real-time digital twin of highway traffic flow by fusing roadside millimeter-wave radar and optical camera streams. The pipeline uses spatial coordinate transformations, object tracking, and Kalman filtering to merge radar range and visual data. This enables the twin to track vehicles continuously, even under poor weather or lighting. The primary strength is achieving continuous, high-accuracy traffic state monitoring. A key limitation is that it is tested specifically on highway corridors, requiring precise physical sensor calibration and heavy infrastructure investment.</p>
             </div>
 
             <!-- Paper 9 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">9. Urban Building Energy and Microclimate Modeling — From 3D City Generation to Dynamic Simulations</h5>
-                    <span class="badge bg-primary">Journal #5</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Building Energy Team | <strong>Venue:</strong> Energy and Buildings (2022)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>The Hot & Cool Neighborhood Toy:</strong> This twin checks how sun hitting skyscraper windows makes the pavement hot, telling architects where to plant big shady trees so people don't sweat so much!</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-building"></i> CityGML 3D Models</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-sun"></i> Microclimate Physics</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-temperature-arrow-down"></i> Energy Reduction Plan</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> This study presents an automated pipeline converting raw 3D CityGML LOD2/LOD3 building models into dynamic Urban Building Energy Models (UBEM). By coupling building thermal load calculations with local microclimate ambient air temperatures, the platform computes district heating/cooling demands with high spatial accuracy.
-                </p>
+            <div class="paper-entry">
+              <h4>9. Urban Building Energy and Microclimate Modeling — From 3D City Generation to Dynamic Simulations (2022)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> Tall glass buildings trap sun and make neighborhoods baking hot. This model builds 400,000 virtual buildings to see how local wind and heat change how much air conditioning everyone uses.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">OpenStreetMap &amp; GIS Shapes</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">CityBEM Energy + CityFFD Wind</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Microclimate Cooling Load Forecast</span>
+              </div>
+              <p><strong>Summary:</strong> This paper develops an automated pipeline to simulate building energy consumption and urban microclimates at a municipal scale. The system combines open geographic datasets (OpenStreetMap, Microsoft building footprints, GIS records, and weather stations) to generate 3D models for over 400,000 buildings. It couples the CityBEM urban building energy model with the CityFFD microclimate fluid dynamics simulator. A key finding is that urban microclimate effects can shift building cooling loads by more than 20% compared to standard weather station assumptions. Its main strength is citywide automated modeling, though it currently operates as an offline dynamic simulation rather than a real-time twin.</p>
             </div>
 
             <!-- Paper 10 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">10. How Close Are Urban Scale Building Simulations to Measured Data? Examining Bias Derived from Building Metadata</h5>
-                    <span class="badge bg-primary">Journal #6</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Building Performance Analysts | <strong>Venue:</strong> Building and Environment (2022)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>Checking the Homework:</strong> If you guess how much electricity a house uses just by looking at its outside roof, you might be wrong! This paper checks smart meters to fix computer guesses and make the digital twin super accurate.</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-chart-line"></i> Simulated Energy</span>
-                    <span class="flow-arrow">&harr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-bolt"></i> Real Smart Meter Data</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-sliders"></i> Bias Correction Calibration</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> The authors quantify discrepancies between urban-scale building energy simulations and actual smart-meter electricity/gas readings. They identify archetype metadata errors (such as wrong wall insulation or occupant schedules) as primary sources of bias, introducing Bayesian calibration techniques to reduce variance by 35%.
-                </p>
+            <div class="paper-entry">
+              <h4>10. How Close Are Urban Scale Building Simulations to Measured Data? Examining Bias Derived from Building Metadata in Urban Building Energy Modeling (2022)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> If you guess how much power 50,000 houses use just by looking at their walls, you'll make mistakes. This paper checks smart electric meters to see where computer guesses go wrong and how to fix them.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">50k AutoBEM Simulated Buildings</span>
+                <span class="flow-arrow">&harr;</span>
+                <span class="flow-step">Utility Smart-Meter Records</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Archetype Bias &amp; Aggregation Analysis</span>
+              </div>
+              <p><strong>Summary:</strong> This paper evaluates how closely urban building energy models mirror reality by comparing AutoBEM physics simulations against actual electricity smart-meter measurements from 50,843 buildings in Chattanooga, Tennessee. The study performs rigorous validation and bias assessment, identifying inaccuracies in building metadata (such as wall insulation, HVAC vintage, and occupant schedules) as primary error drivers. The authors conclude that urban-scale building simulations are highly dependable when analyzing neighborhoods in aggregate but exhibit noticeable bias when predicting individual building energy usage.</p>
             </div>
 
             <!-- Paper 11 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">11. System Dynamics Modeling of Collaborative Governance in Smart Cities</h5>
-                    <span class="badge bg-primary">Journal #7</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Liu et al. | <strong>Venue:</strong> Sustainable Cities and Society (2024)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>The Teamwork Dominoes:</strong> Showing how government decisions, public feedback, and tech investments fall like dominoes over 10 years, helping mayors make decisions that keep citizens happy.</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-users"></i> Stakeholder Feedback</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-rotate"></i> System Dynamics Loops</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-chart-diagram"></i> Long-Term Policy Forecast</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> This paper develops a System Dynamics (SD) simulation model representing feedback loops among government agencies, private tech vendors, and citizens. The model simulates multi-year policy trajectories, showing that transparent data-sharing policies increase public trust and long-term smart city adoption rates.
-                </p>
+            <div class="paper-entry">
+              <h4>11. System Dynamics Modeling of Collaborative Governance in Smart Cities: A Case Study of Dongguan, China (Liu et al., 2024)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> City hall, technology companies, and ordinary citizens act like a web of dominoes. This model simulates 10 years of government spending to see which policies build public trust and cooperation.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">Yearbook Data (2015–2021)</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">System Dynamics Feedback Loops</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">2030 Governance Policy Projections</span>
+              </div>
+              <p><strong>Summary:</strong> The paper examines how policy interventions and stakeholder relationships influence collaborative smart-city governance, using Dongguan, China, as a case study. It formulates a system dynamics model capturing feedback loops between government departments, public citizens, enterprise technology providers, and the economy. Using historical statistical data from 2015 to 2021, the authors simulate governance outcomes through 2030. They find that balanced policy investments yield higher collaborative engagement than purely tech-driven initiatives. A key strength is capturing complex systemic feedback, though the framework relies on offline statistical aggregates rather than real-time telemetry.</p>
             </div>
 
             <!-- Paper 12 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">12. Generative AI-Driven Digital Twin Architecture for Urban Mobility Simulation</h5>
-                    <span class="badge bg-primary">Journal #8</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> AI & Mobility Research Group | <strong>Venue:</strong> IEEE Access / Urban Informatics (2026)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>The AI Storyteller for Traffic:</strong> Instead of coding every car manually, you can tell an AI robot: "Simulate a snowy Monday morning with a broken subway train!" The AI creates thousands of realistic virtual drivers instantly!</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-comment-dots"></i> Text Prompt / Scenario</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-wand-magic-sparkles"></i> LLM + Generative AI</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-route"></i> Synthetic Mobility Patterns</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> This paper presents a cutting-edge framework integrating Large Language Models (LLMs) and Generative Diffusion Models with dynamic traffic digital twins. Generative AI creates realistic synthetic mobility schedules and agent behaviors, drastically reducing the manual setup time for large-scale urban traffic scenarios.
-                </p>
+            <div class="paper-entry">
+              <h4>12. Generative AI-Driven Digital Twin Architecture for Urban Mobility Simulation and Decision Support (2026)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> Instead of coding complicated traffic rules by hand, a city planner can type in plain English: "What happens if a marathon closes main street?" AI translates that into a complete traffic simulation in minutes.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">Natural Language Query</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Generative AI Intent Parser</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Discrete-Event Traffic Engine</span>
+              </div>
+              <p><strong>Summary:</strong> This study explores using Generative AI to make urban mobility digital twins accessible to non-technical policymakers. Implemented for Las Palmas de Gran Canaria, Spain, the platform connects an LLM-based intent recognition layer with a discrete-event mobility simulation engine. The model ingests census, demographic, and tourist traffic flows, achieving 96% accuracy in translating natural-language user commands into simulation parameters and simulating 19 hours of traffic within 20 minutes. A limitation is its current Technology Readiness Level (TRL-4 proof-of-concept), requiring further real-world validation before municipal deployment.</p>
             </div>
 
-            <!-- ================= RECENT CONFERENCE & TECH REPORTS (13-20) ================= -->
-            <h3 class="text-secondary border-bottom pb-2 mb-4 mt-5"><i class="fa-solid fa-users-line me-2"></i>Category III: Recent Conference Papers & Technical Reports (8 Studies)</h3>
+            <h3>3. Recent Conference Papers &amp; Technical Reports (8)</h3>
 
             <!-- Paper 13 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">13. Agent-Based Modeling of a Stadium Evacuation in a Smart City</h5>
-                    <span class="badge bg-info text-dark">Conference #1</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Zhang et al. | <strong>Venue:</strong> IEEE Winter Simulation Conference (WSC) (2018)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>The Stadium Door Puzzle:</strong> Imagine 50,000 sports fans all trying to leave a big stadium at the exact same second! This model tests which exit doors should open first so nobody gets bumped into or stuck.</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-people-group"></i> 50k Virtual Agents</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-door-open"></i> Exit Bottleneck Engine</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-stopwatch"></i> Optimal Evacuation Time</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> This classic simulation paper models crowd movement during emergency stadium evacuations. By treating each spectator as an autonomous agent with individual walking speeds, panic thresholds, and exit preferences, the system identifies physical bottlenecks and computes optimal gate opening sequences to maximize safety.
-                </p>
+            <div class="paper-entry">
+              <h4>13. Agent-Based Modeling of a Stadium Evacuation in a Smart City (Zhang et al., 2018)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> When 50,000 sports fans panic during an alarm, people bump into each other. Modeling each fan as an individual virtual character shows how bad phone rumors make crowds jam up exit gates.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">Stadium Layout &amp; Gate Geometry</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">NetLogo Human Agent Behaviors</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Evacuation Time &amp; Chokepoint Map</span>
+              </div>
+              <p><strong>Summary:</strong> This paper investigates emergency stadium evacuations within a smart city context using agent-based modeling (ABM) in NetLogo. Each spectator is modeled with behavioral parameters (walking speed, exit selection, panic levels, and response to misinformation received via mobile devices). The simulation reveals that slower emergency responder guidance and false rumors create sudden crowd chokepoints, prolonging total evacuation time. A strength is its granular visual representation of human movement dynamics. A limitation is its single-facility focus, which needs expansion to capture street-level traffic connections outside the venue gates.</p>
             </div>
 
             <!-- Paper 14 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">14. Urban Digital Twins: Decision-Making Models for Transportation Network Simulation</h5>
-                    <span class="badge bg-info text-dark">Conference #2</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Zhang & Zhang | <strong>Venue:</strong> ACM SIGSIM Conference on Principles of Advanced Discrete Simulation (PADS) (2022)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>The Smart Traffic Referee:</strong> When a busy highway roundabout gets clogged like a sink full of toys, a smart computer referee temporarily turns incoming lights red so the middle clears out fast!</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-car"></i> Loop Detectors</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-rotate-right"></i> Hysteresis Logic Engine</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-traffic-light"></i> Automated Inflow Control</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> This paper develops closed-loop decision-making algorithms integrated directly into microsimulation traffic twins. By implementing hysteresis control logic based on real-time virtual induction loop occupancy thresholds (e.g., 85% activation, 60% deactivation), the digital twin prevents gridlock at critical road junctions without manual human intervention.
-                </p>
+            <div class="paper-entry">
+              <h4>14. Urban Digital Twins: Decision-Making Models for Transportation Network Simulation (Zhang &amp; Zhang, 2022)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> Like a smart thermostat that turns on the AC before a room gets too hot, this traffic twin watches street cameras and switches roundabout signals before a traffic jam can even start.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">Virtual Loop Detectors</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Hysteresis Threshold Logic</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Automated Inflow Signal Metering</span>
+              </div>
+              <p><strong>Summary:</strong> Published in ACM PADS, this paper presents automated decision-making models embedded directly inside transportation digital twins. It addresses a major flaw in traditional traffic simulators, which rely on manual, open-loop adjustments. The authors implement hysteresis control loops tied to virtual detector sensors: when road occupancy crosses upper thresholds (e.g., 85%), metering signals restrict inbound flow, restoring it only once occupancy drops below 60%. Tested across complex intersections and roundabouts, the approach demonstrates how digital twins can act as active controllers rather than passive visualization tools.</p>
             </div>
 
             <!-- Paper 15 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">15. Designing a Spatially-Explicit Urban Digital Twin Framework for Smart Water Infrastructure and Flood Management</h5>
-                    <span class="badge bg-info text-dark">Conference #3</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Sabri, Alexandridis, et al. | <strong>Venue:</strong> IEEE International Conference on Digital Twins and Parallel Intelligence (DTPI) (2023)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>The Water Pipe Video Game:</strong> A digital map that connects underground sewer pipes, street storm drains, and new building plans together so city builders can make sure rain drains away safely.</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-pipe-valve"></i> Sewer & Storm GIS</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-cloud-showers-water"></i> Design-Storm Simulator</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-square-check"></i> Water-Sensitive Urban Design</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> Sabri et al. present a spatially explicit digital twin framework combining 3D GIS building envelopes with underground stormwater drainage capacity models. Applied to the Fishermans Bend redevelopment site in Australia, the platform evaluates stormwater runoff volume across near-, mid-, and long-term climate scenarios.
-                </p>
+            <div class="paper-entry">
+              <h4>15. Designing a Spatially-Explicit Urban Digital Twin Framework for Smart Water Infrastructure and Flood Management (Sabri et al., 2023)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> A 3D digital sandbox of Fishermans Bend, Australia, that puts new apartment blueprints and underground sewer pipes together to prove whether new drains will stop flash floods.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">3D GIS Buildings &amp; Storm Pipes</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Design Storm Rainfall Engine</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Water-Sensitive Urban Layouts</span>
+              </div>
+              <p><strong>Summary:</strong> This IEEE paper outlines a spatially explicit digital twin framework combining 3D GIS, GeoAI, and hydrological modeling to support flood mitigation and urban water planning. Applied to the Fishermans Bend urban renewal project in Australia, the framework couples building envelopes, soil permeability, and underground drainage pipe capacities. Planners can simulate runoff volumes under varying return-period storms and test water-sensitive urban design features (like rain gardens). The paper proves the value of spatial digital twins for municipal investments, though it identifies data-sharing boundaries across utilities as a major implementation roadblock.</p>
             </div>
 
             <!-- Paper 16 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">16. The Spatial Data Infrastructure of an Urban Digital Twin in the Building Energy Domain Using OGC Standards</h5>
-                    <span class="badge bg-info text-dark">Conference #4</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> EnSysLE Project Team | <strong>Venue:</strong> ISPRS Annals of Photogrammetry, Remote Sensing and Spatial Information Sciences (2022)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>The Universal Lego Connector:</strong> Different computer programs often speak different languages! This paper creates a universal plug (like a USB cable) so any 3D building map can stream live solar panel data instantly.</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-cubes"></i> 3D CityGML Data</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-plug"></i> OGC API 3D GeoVolumes</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-desktop"></i> EnSysLE Web Visualization</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> This paper addresses data interoperability in energy digital twins by implementing Open Geospatial Consortium (OGC) web standards. Using OGC API 3D GeoVolumes for lightweight 3D tile streaming and OGC SensorThings API (STA) for dynamic energy sensor streams, the EnSysLE system visualizes space-heating demands across thousands of structures in web browsers.
-                </p>
+            <div class="paper-entry">
+              <h4>16. The Spatial Data Infrastructure of an Urban Digital Twin in the Building Energy Domain Using OGC Standards (2022)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> Different computer software programs speak different languages. This paper creates a universal USB plug using open standards so any web browser can load 3D buildings and see live power use instantly.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">3D CityGML Geometry</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">OGC 3D GeoVolumes &amp; SensorThings</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Interoperable Web Dashboard</span>
+              </div>
+              <p><strong>Summary:</strong> Presented at ISPRS, this paper addresses data interoperability challenges in building energy digital twins through the German EnSysLE project. The authors deploy Open Geospatial Consortium (OGC) open standards, pairing CityGML 3D city models with OGC API - 3D GeoVolumes and OGC SensorThings API (STA). This allows lightweight streaming of large 3D urban datasets to standard web browsers while linking live and simulated heating demand records directly to building geometries. The approach eliminates proprietary software lock-in, showing that open spatial standards are essential for scalable deployment.</p>
             </div>
 
             <!-- Paper 17 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">17. Towards Connected Simulations – Tracing the Evolutionary Path of Urban Simulations across Digital Twin Projects</h5>
-                    <span class="badge bg-info text-dark">Conference #5</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Urban Simulation Consortium | <strong>Venue:</strong> International Conference on Computational Science (ICCS) / ArXiv (2025)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>Connecting Toy Trains & Toy Cars:</strong> Instead of having one video game for cars, one for weather, and one for electric power, this paper connects them all together into one master mega-game!</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-car"></i> Mobility Model</span>
-                    <span class="flow-arrow">+</span>
-                    <span class="flow-step"><i class="fa-solid fa-bolt"></i> Power Grid Model</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-link"></i> Co-Simulation Bus</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> This study traces the evolutionary trajectory of urban simulations from isolated single-domain models to interconnected, co-simulated digital twins. The paper defines standardized data-coupling interfaces that allow multi-physics solvers (e.g., traffic ABMs interacting with electrical grid load simulators for EV charging) to exchange boundary states in real time.
-                </p>
+            <div class="paper-entry">
+              <h4>17. Towards Connected Simulations – Tracing the Evolutionary Path of Urban Simulations across Digital Twin Projects and Use Cases (2025)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> Instead of having one separate computer model for cars, one for electricity, and one for weather, this paper connects them all together so they can talk and share data in real time.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">Isolated Domain Simulators</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Standardized Co-Simulation Bus</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Connected Multi-Physics Twin</span>
+              </div>
+              <p><strong>Summary:</strong> This paper examines the evolution of urban simulation from isolated, domain-specific silos (e.g., standalone traffic or building simulators) toward connected, multi-domain digital twins. Surveying European municipal implementations, the authors map out integration architectures where discrete simulation components communicate over shared middleware. For example, an agent-based mobility model exchanges real-time power demands with a power grid simulator during EV charging peaks. The paper establishes co-simulation interfaces and architectural patterns, identifying clock synchronization and runtime latency as major challenges when scaling to millions of entities.</p>
             </div>
 
             <!-- Paper 18 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">18. Digital Twin in Smart City</h5>
-                    <span class="badge bg-info text-dark">Conference #6</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Adreani et al. | <strong>Venue:</strong> Transportation Research Procedia / LNCS (2023)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>The Smart Thermostat for Big Buildings:</strong> A digital twin dashboard that tracks energy use across university campuses, turning off lights and heaters in empty rooms automatically.</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-temperature-high"></i> HVAC IoT Sensors</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-server"></i> Central Energy Dashboard</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-leaf"></i> 15% Power Savings</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> Adreani et al. evaluate the practical implementation of energy management digital twins across large municipal facilities. By integrating IoT sub-meters with BIM floor plans, the system provides real-time heatmaps of energy consumption, achieving continuous energy reductions of up to 15%.
-                </p>
+            <div class="paper-entry">
+              <h4>18. Digital Twin in Smart City (2023)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> A practical walkthrough showing how universities and city centers set up smart meters in buildings and buses to monitor energy waste and fix operational bottlenecks.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">Physical Infrastructure Sub-Meters</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Virtual Emulation &amp; Baseline</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Facility Energy Reductions</span>
+              </div>
+              <p><strong>Summary:</strong> Published in Transportation Research Procedia, this paper synthesizes practical architectures for municipal digital twins, focusing on campus and district deployments. The authors analyze how sensor telemetry, BIM geometry, and predictive simulation interact across three operations: visual monitoring, operational emulation, and predictive scenario testing. Applied to facilities and transportation hubs, the study demonstrates that coupling smart sub-meters with simulation benchmarks allows operators to identify anomalous energy usage and reduce operational waste by 12–15%. It stresses that organizational readiness is just as critical as technical software.</p>
             </div>
 
             <!-- Paper 19 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">19. Empowering Smart Cities with Digital Twins of Buildings: Data-Driven Energy Modelling in Building Management</h5>
-                    <span class="badge bg-info text-dark">Conference #7</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Smart Building Initiative | <strong>Venue:</strong> IEEE International Conference on Smart Infrastructure (2024)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>The House Doctor:</strong> A computer twin that listens to building vibrations and power draw to diagnose broken air conditioners before they break down on hot summer days!</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-screwdriver-wrench"></i> Machine Telemetry</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-brain"></i> Predictive AI Model</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-bell"></i> Preventive Maintenance Alert</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> This technical report explores data-driven machine learning models integrated into Building Management System (BMS) digital twins. Using dynamic neural networks trained on historical indoor climate telemetry, the twin predicts HVAC equipment failures days before occurrence, lowering operational costs.
-                </p>
+            <div class="paper-entry">
+              <h4>19. Empowering Smart Cities with Digital Twins of Buildings: Applications and Implementation Considerations of Data-Driven Energy Modelling in Building Management (2024)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> Like a digital building doctor that listens to ventilation fans and heating boilers, diagnosing worn-out machine parts before they break on a freezing winter night.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">HVAC &amp; BMS Sensor Telemetry</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Data-Driven Machine Learning</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Predictive Maintenance Alerts</span>
+              </div>
+              <p><strong>Summary:</strong> This technical study evaluates the shift from rigid physical thermodynamic models to data-driven and hybrid machine learning models within Building Management System (BMS) digital twins. By analyzing continuous time-series telemetry (chilled water flow, indoor CO2, fan speeds, damper positions), machine learning models predict future energy consumption and detect mechanical faults before equipment fails. The authors review field implementations, concluding that data-driven approaches achieve lower configuration costs than full physics engines, though they require strict sensor cleaning protocols to prevent model drift.</p>
             </div>
 
             <!-- Paper 20 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">20. A Comprehensive Review of Digital Twin Technologies in Smart Cities</h5>
-                    <span class="badge bg-info text-dark">Conference #8</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Huzzat et al. | <strong>Venue:</strong> Digital Engineering / Research Review (2025)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>The Smart City Map of the Future:</strong> A detailed survey mapping out how cities around the world use digital twins for everything from fixing roads to planning new parks.</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-globe"></i> Global Case Studies</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-sitemap"></i> Technological Taxonomy</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-lightbulb"></i> Next-Gen AI Vision</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> Huzzat et al. synthesize state-of-the-art UDT developments across global deployments (including Singapore, Zurich, and Dubai). The authors evaluate core pillars (Visualization, Emulation, Simulation) and emphasize the transition from static 3D visual models to intelligent, self-adapting urban ecosystems driven by edge computing.
-                </p>
+            <div class="paper-entry">
+              <h4>20. A Comprehensive Review of Digital Twin Technologies in Smart Cities (2025)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> A complete world tour of smart cities—from Singapore to Zurich—showing what works right now and proving that true digital twins must do live two-way control, not just pretty 3D pictures.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">Global City Case Studies</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Technical Pillar Assessment</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Next-Gen Autonomous Roadmap</span>
+              </div>
+              <p><strong>Summary:</strong> Published in Digital Engineering, this paper provides a broad survey of digital twin deployments across international smart cities, including Singapore, Zurich, Helsinki, and Shanghai. It evaluates technological maturity across sensing networks, 3D spatial engines, simulation solvers, and administrative control frameworks. The authors emphasize that many current projects remain static 3D visual models rather than closed-loop digital twins. The paper concludes by outlining research imperatives for automated edge calibration, open semantic schemas, and AI-enabled decision feedback loops.</p>
             </div>
 
-            <!-- ================= SUPPLEMENTAL PAPERS (21-25) ================= -->
-            <h3 class="text-secondary border-bottom pb-2 mb-4 mt-5"><i class="fa-solid fa-folder-plus me-2"></i>Category IV: Core Supplemental Papers (5 Studies)</h3>
+            <h3>4. Supplemental Papers (5)</h3>
 
             <!-- Paper 21 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">21. A Digital Twin Smart City for Citizen Feedback</h5>
-                    <span class="badge bg-secondary">Supplemental #1</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Gary White, Anna Zink, Lara Codecá, Siobhán Clarke | <strong>Venue:</strong> Cities (2021)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>Voting on New Buildings in VR:</strong> Before a builder constructs a huge tall building that blocks the sun over a playground, citizens put on VR glasses to see the shadow and vote "yes" or "no" on their smartphones!</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-city"></i> 3D Docklands Model</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-mobile-screen"></i> Citizen App Interface</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-comments"></i> Georeferenced Feedback</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> White et al. demonstrate an open-access digital twin of the Dublin Docklands area designed specifically for citizen engagement. Residents can interact with proposed skyline changes and park redevelopments on web browsers, submitting spatially pinned feedback that urban planners analyze before granting building permits.
-                </p>
+            <div class="paper-entry">
+              <h4>21. A Digital Twin Smart City for Citizen Feedback (White et al., 2021)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> Before city hall approves a new skyscraper that casts a dark shadow over a playground, citizens can open a phone app, walk through the 3D model, and pin comments explaining what they like or hate.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">3D Dublin Docklands Model</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Interactive Web Interface</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Geotagged Citizen Opinions</span>
+              </div>
+              <p><strong>Summary:</strong> White et al. present a participatory digital twin implemented for the Dublin Docklands area in Ireland. The platform combines 3D city models with flood and crowd movement simulations, providing an interactive web portal where citizens can explore planned building developments. Residents submit spatially anchored feedback on proposed urban redesigns, allowing urban planners to incorporate public feedback before construction begins. The study demonstrates that digital twins can serve as collaborative civic engagement tools, bridging the technical gap between professional planners and residents.</p>
             </div>
 
             <!-- Paper 22 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">22. Leveraging Generative AI for Urban Digital Twins: A Scoping Review</h5>
-                    <span class="badge bg-secondary">Supplemental #2</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Haowen Xu et al. | <strong>Venue:</strong> Urban Informatics / ArXiv (2024)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>The AI Painter for 3D Cities:</strong> AI can look at a 2D map and automatically paint full 3D buildings, trees, and cars in seconds, saving city programmers months of drawing work!</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-map"></i> 2D Map & Imagery</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-brain"></i> Generative AI Network</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-cubes"></i> Synthetic 3D City Model</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> Haowen Xu et al. provide a comprehensive scoping review on integrating Generative AI (GANs, NeRFs, Diffusion, LLMs) into urban digital twins. The paper outlines methods for autonomous generation of 3D building geometry, synthetic mobility patterns, and automated scenario text-to-simulation generation.
-                </p>
+            <div class="paper-entry">
+              <h4>22. Leveraging Generative AI for Urban Digital Twins: A Scoping Review (Xu et al., 2024)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> Generative AI acts like a smart assistant for 3D mapmakers. It looks at satellite photos and automatically builds full 3D houses, roads, and virtual daily driving schedules in seconds.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">Satellite Photos &amp; Prompts</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Diffusion, NeRFs &amp; LLMs</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Autonomous 3D Urban Synthesis</span>
+              </div>
+              <p><strong>Summary:</strong> This scoping review explores how Generative AI (LLMs, Diffusion Models, GANs, Neural Radiance Fields) is transforming the construction and operation of urban digital twins. The authors show how generative models autonomously generate 3D building textures, fill missing GIS data, synthesize human activity schedules, and translate natural language queries into simulation configurations. While GenAI significantly reduces the time required to build city models, the authors emphasize that AI hallucinations, lack of physical conservation guarantees, and massive computational costs remain active research hurdles.</p>
             </div>
 
             <!-- Paper 23 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">23. Climate Change Scenario Simulations for Urban Flood Resilience with System Dynamics Approach</h5>
-                    <span class="badge bg-secondary">Supplemental #3</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Shanghai Flood Resilience Team | <strong>Venue:</strong> Natural Hazards / Sustainability (2024)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>The 50-Year Weather Time Machine:</strong> A computer time machine that tests how much rain will fall in the year 2075, showing where cities need to build deeper water storage tunnels right now.</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-cloud-rain"></i> Climate CMIP6 Scenarios</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-diagram-project"></i> System Dynamics Loop</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-shield-heart"></i> Resilience Investment Plan</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> Applying System Dynamics (SD) modeling to Shanghai, this paper simulates 50-year climate scenarios under CMIP6 SSP245 and SSP585 precipitation projections. The model evaluates long-term interactions between urban land expansion, drainage infrastructure capital expenditure, and flood damage risks.
-                </p>
+            <div class="paper-entry">
+              <h4>23. Climate Change Scenario Simulations for Urban Flood Resilience with System Dynamics Approach (2024)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> A weather time machine that simulates 50 years into the future for Shanghai, showing how much money the city must invest in underground water cisterns to avoid catastrophic floods.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">CMIP6 Future Rain Forecasts</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">System Dynamics Economic Loops</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">50-Year Infrastructure Budget Plan</span>
+              </div>
+              <p><strong>Summary:</strong> Focusing on Shanghai, China, this paper develops a System Dynamics (SD) simulation model to evaluate urban flood resilience over multi-decade horizons under IPCC CMIP6 climate change scenarios. The model links rainfall intensity projections, rapid urban land development, drainage asset expansion, and economic disaster losses. Simulation results demonstrate that conventional drainage pipe upgrades alone cannot keep pace with climate extremes, and that integrating green infrastructure (sponge city retention parks) yields the highest benefit-cost ratio through 2050.</p>
             </div>
 
             <!-- Paper 24 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">24. Urban Digital Twin-Based Solution Using Geospatial Information for Solid Waste Management</h5>
-                    <span class="badge bg-secondary">Supplemental #4</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Smart Waste Research Group | <strong>Venue:</strong> Environmental Technology & Innovation (2024)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>The Talking Trash Cans:</strong> Smart trash cans tell garbage trucks when they are full! The digital twin plans the shortest driving route for trucks so they save gas and clear trash fast.</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-trash-can"></i> Ultrasonic Bin Sensors</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-route"></i> Dynamic Route Optimizer</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-truck-pickup"></i> Fuel & Time Savings</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> This study presents a geospatial digital twin framework for municipal solid waste management. Ultrasonic sensors monitor fill levels in public waste bins in real time. The digital twin dynamically re-routes collection trucks using Dijkstra shortest-path algorithms, reducing truck fuel consumption by 22%.
-                </p>
+            <div class="paper-entry">
+              <h4>24. Urban Digital Twin-Based Solution Using Geospatial Information for Solid Waste Management (2024)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> City trash cans tell garbage trucks when they are completely full. The digital twin then plots the shortest route so trucks only drive where they are needed, saving diesel and keeping streets clean.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">Ultrasonic Bin Fill Telemetry</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">GIS Dijkstra Routing Solver</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Optimized Fuel &amp; Truck Schedules</span>
+              </div>
+              <p><strong>Summary:</strong> Published in Sustainable Cities and Society, this paper introduces a municipal digital twin framework for solid waste collection. Ultrasonic IoT fill-level sensors inside public bins transmit real-time capacity states to a central GIS digital twin. The platform applies dynamic Dijkstra and genetic route-optimization algorithms to generate daily collection routes based on actual waste generation rather than fixed static schedules. Real-world validation proved the system reduces total garbage truck travel distance by 22% and lowers carbon emissions without missing overflowing bins.</p>
             </div>
 
             <!-- Paper 25 -->
-            <div class="card paper-card p-4">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="fw-bold text-primary mb-1">25. Comprehensive Analysis of Digital Twins in Smart Cities: A 4200-Paper Bibliometric Study</h5>
-                    <span class="badge bg-secondary">Supplemental #5</span>
-                </div>
-                <p class="text-muted small mb-2"><strong>Authors:</strong> Global Bibliometrics Team | <strong>Venue:</strong> Artificial Intelligence Review (2024)</p>
-                
-                <div class="eli5-box">
-                    <span class="eli5-badge"><i class="fa-solid fa-child me-1"></i> ELI5 Analogy</span>
-                    <p class="mb-0"><strong>The Super Library Search:</strong> A computer read 4,200 scientific books about digital twins and organized them into a giant treasure map showing what scientists are building next!</p>
-                </div>
-
-                <div class="visual-diagram">
-                    <span class="flow-step"><i class="fa-solid fa-book text-primary"></i> 4,200 Academic Papers</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-network-wired"></i> Citation Network Mapping</span>
-                    <span class="flow-arrow">&rarr;</span>
-                    <span class="flow-step"><i class="fa-solid fa-bullseye"></i> Identification of Research Gaps</span>
-                </div>
-
-                <p class="card-text small text-secondary">
-                    <strong>Detailed Technical Summary:</strong> Conducting a massive bibliometric quantitative analysis of 4,200 publications indexed in Web of Science and Scopus between 2015 and 2024, this paper maps co-citation networks, top research institutions, and keyword co-occurrence clusters. It identifies real-time multi-physics data assimilation and AI-driven autonomous decision support as the fastest-growing sub-fields.
-                </p>
+            <div class="paper-entry">
+              <h4>25. Comprehensive Analysis of Digital Twins in Smart Cities: A 4200-Paper Bibliometric Study (2024)</h4>
+              <div class="eli5-box">
+                <strong>Simple Takeaway:</strong> A computer algorithm read through 4,200 research papers to build a giant map of the smart city research world, showing which universities lead the field and what topics are trending next.
+              </div>
+              <div class="flow-diagram">
+                <span class="flow-step">4,200 Scopus/WoS Papers</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Co-Citation &amp; Keyword Clustering</span>
+                <span class="flow-arrow">&rarr;</span>
+                <span class="flow-step">Emerging Field Growth Map</span>
+              </div>
+              <p><strong>Summary:</strong> This bibliometric study analyzes 4,200 peer-reviewed digital twin articles published between 2015 and 2024. Using bibliometric mapping tools (VOSviewer, CiteSpace), the authors map global research networks, leading institutional clusters, and keyword trajectories. The analysis reveals that the field has shifted from early manufacturing concepts and static 3D BIM visualization toward IoT integration, real-time data assimilation, and AI-driven autonomous decision systems. It serves as a comprehensive empirical index of the smart city simulation literature.</p>
             </div>
 
-        </section>
+          </section>
 
-        <!-- SECTION 5: PRESENTATION SLIDES OUTLINE -->
-        <section id="slides" class="mb-5">
-            <h2 class="section-header text-primary"><i class="fa-solid fa-file-powerpoint me-2"></i>5. Class Presentation Slides Outline (Nov 12 & Nov 19)</h2>
-            <p>Per course requirements, our group will present the survey findings across a 20-slide structured presentation. Below is the detailed slide-by-slide structure:</p>
-
-            <div class="card p-4">
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <h6 class="fw-bold text-primary"><i class="fa-solid fa-play me-2"></i>Part 1: Foundations & Architecture (Slides 1–10)</h6>
-                        <ul class="list-group list-group-flush small">
-                            <li class="list-group-item"><strong>Slide 1:</strong> Title, Group Members & CSI CSC 754 Introduction</li>
-                            <li class="list-group-item"><strong>Slide 2:</strong> Motivation: Urban Challenges in Mobility, Energy & Flooding</li>
-                            <li class="list-group-item"><strong>Slide 3:</strong> Definition: What is an Urban Digital Twin? (ELI5 & Technical)</li>
-                            <li class="list-group-item"><strong>Slide 4:</strong> Taxonomy & Classification Scheme (Technological vs Application)</li>
-                            <li class="list-group-item"><strong>Slide 5:</strong> Foundational Theories (Batty, Li et al., Wang et al.)</li>
-                            <li class="list-group-item"><strong>Slide 6:</strong> Layer 1: Spatial Infrastructure & OGC Standards (CityGML, 3D GeoVolumes)</li>
-                            <li class="list-group-item"><strong>Slide 7:</strong> Layer 2: Real-Time Data Assimilation & IoT Synchronization</li>
-                            <li class="list-group-item"><strong>Slide 8:</strong> Layer 3: Simulation Engines (Agent-Based Modeling & Hydrodynamics)</li>
-                            <li class="list-group-item"><strong>Slide 9:</strong> Layer 4: AI & Machine Learning Integration (Generative AI, PINNs)</li>
-                            <li class="list-group-item"><strong>Slide 10:</strong> Summary of Foundational Architecture</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <h6 class="fw-bold text-success"><i class="fa-solid fa-city me-2"></i>Part 2: Domain Applications & Future Work (Slides 11–20)</h6>
-                        <ul class="list-group list-group-flush small">
-                            <li class="list-group-item"><strong>Slide 11:</strong> Application Domain 1: Urban Mobility & Traffic Optimization</li>
-                            <li class="list-group-item"><strong>Slide 12:</strong> Case Study: DTUMOS & Radar-Camera Highway Fusion</li>
-                            <li class="list-group-item"><strong>Slide 13:</strong> Application Domain 2: Water Infrastructure & Flood Management</li>
-                            <li class="list-group-item"><strong>Slide 14:</strong> Case Study: FlowsDT & Coastal Typhoon Solvers</li>
-                            <li class="list-group-item"><strong>Slide 15:</strong> Application Domain 3: Building Energy & Microclimate Modeling</li>
-                            <li class="list-group-item"><strong>Slide 16:</strong> Case Study: EnSysLE & Metadata Bias Correction</li>
-                            <li class="list-group-item"><strong>Slide 17:</strong> Application Domain 4: Governance, Citizen VR Feedback & Waste</li>
-                            <li class="list-group-item"><strong>Slide 18:</strong> Key Research Gaps (Scalability, Privacy, Standards)</li>
-                            <li class="list-group-item"><strong>Slide 19:</strong> Future Research Roadmap (Autonomous Cities & Generative Twins)</li>
-                            <li class="list-group-item"><strong>Slide 20:</strong> Conclusion, Q&A, and References</li>
-                        </ul>
-                    </div>
-                </div>
+          <section>
+            <h2>7. Main Argument Beginning to Emerge</h2>
+            <p>
+              We haven't finalized a thesis yet, but the literature is pointing toward a useful story:
+            </p>
+            <div class="section-highlight">
+              <p><strong>Smart-city simulation is evolving from relatively isolated and static urban models toward integrated, data-driven, continuously updated systems.</strong></p>
             </div>
-        </section>
+            <p>The progression we may eventually discuss is approximately:</p>
+            <p><strong>Traditional simulation &rarr; integrated urban modeling &rarr; sensor/IoT-connected models &rarr; digital twins &rarr; AI-enhanced and increasingly real-time simulation.</strong></p>
+            <p>
+              At the same time, older simulation methods aren't simply disappearing. <strong>Agent-based modeling</strong>,
+              <strong>system dynamics</strong>, <strong>numerical simulation</strong>, <strong>microsimulation</strong>, etc.,
+              increasingly operate <em>inside</em> larger digital-twin/smart-city platforms.
+            </p>
+            <p>This distinction could become one of the central ideas of our final survey.</p>
+          </section>
 
-        <!-- SECTION 6: FINAL PAPER STRUCTURE -->
-        <section id="final-paper" class="mb-5">
-            <h2 class="section-header text-primary"><i class="fa-solid fa-file-lines me-2"></i>6. Final Paper Submission Structure (Dec 10)</h2>
-            <p>The final survey paper follows the formal ACM Computing Surveys format required by the syllabus. Below is the complete structural outline:</p>
+          <section>
+            <h2>8. Questions We'll Compare Across Papers</h2>
+            <ul>
+              <li><strong>Research problem</strong> — What problem is being solved?</li>
+              <li><strong>Application/domain</strong> — Transportation, energy, flooding, planning, etc.</li>
+              <li><strong>Modeling technique</strong> — Agent-based, system dynamics, numerical, ML/data-driven, etc.</li>
+              <li><strong>Simulation purpose</strong> — Prediction, optimization, scenario testing, decision support, monitoring, etc.</li>
+              <li><strong>Data</strong> — Historical, synthetic, IoT sensors, GIS, cameras, building data, etc.</li>
+              <li><strong>Scale</strong> — Building, neighborhood, transportation network, or entire city.</li>
+              <li><strong>Real-time capability</strong> — Static/offline vs continuously updated.</li>
+              <li><strong>Validation</strong> — How do the authors establish that their model works?</li>
+              <li><strong>Main results</strong> — What did they actually discover?</li>
+              <li><strong>Strengths</strong> — Why is the approach useful?</li>
+              <li><strong>Limitations</strong> — What doesn't it solve?</li>
+              <li><strong>Future work</strong> — What do the authors say needs to happen next?</li>
+            </ul>
+            <p>These will become our <strong>literature matrix</strong>.</p>
+          </section>
 
-            <div class="card p-4 border-dark">
-                <ol class="mb-0 fw-bold text-dark">
-                    <li class="mb-2">Abstract & Keyword Indexing</li>
-                    <li class="mb-2">Topic & Problem Introduction
-                        <ul class="fw-normal text-secondary small">
-                            <li>Emergence of Smart Cities and System Simulation Needs</li>
-                            <li>Transition from Static GIS to Dynamic Urban Digital Twins</li>
-                        </ul>
-                    </li>
-                    <li class="mb-2">Definitions of Basic Terminologies & Architectural Framework
-                        <ul class="fw-normal text-secondary small">
-                            <li>Data Assimilation, Multiscale Agent-Based Modeling, Co-Simulation</li>
-                        </ul>
-                    </li>
-                    <li class="mb-2">Taxonomy and Classification Scheme
-                        <ul class="fw-normal text-secondary small">
-                            <li>Layer-based Technological Axis vs Domain Application Axis</li>
-                        </ul>
-                    </li>
-                    <li class="mb-2">State-of-the-Art Approaches & Major Results
-                        <ul class="fw-normal text-secondary small">
-                            <li>Detailed presentation of 4 Foundational, 8 Journal, 8 Conference, and 5 Supplemental studies</li>
-                        </ul>
-                    </li>
-                    <li class="mb-2">Cross-Domain Discussion & Synthesis
-                        <ul class="fw-normal text-secondary small">
-                            <li>Comparative matrix of simulation engines, data refresh rates, and scalability</li>
-                        </ul>
-                    </li>
-                    <li class="mb-2">Current Trends, Challenges and Future Work
-                        <ul class="fw-normal text-secondary small">
-                            <li>Generative AI integration, edge computing, cyber-security, and open standards</li>
-                        </ul>
-                    </li>
-                    <li class="mb-0">References (ACM Reference Format for 50+ Surveyed Works)</li>
-                </ol>
-            </div>
-        </section>
-
-    </div>
-
-    <!-- Footer -->
-    <footer class="text-center">
-        <div class="container">
-            <p class="mb-1 fw-bold text-light">CSC 754: Topics in System Simulation — Prof. Feng Gu</p>
-            <p class="small mb-0 text-muted">Department of Computer Science | CUNY College of Staten Island</p>
-            <p class="small text-muted mt-2">&copy; 2026 Survey Research Group. All Rights Reserved.</p>
         </div>
-    </footer>
-
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="[https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js](https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js)"></script>
-</body>
+      </div>
+    </div>
+  </body>
 </html>
